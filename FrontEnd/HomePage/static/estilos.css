@@ -9,7 +9,7 @@
 }
 
 body{
-    background-color: rgb(255, 251, 251);
+    background-color: rgb(15, 15, 103);
 
 }
 
@@ -24,9 +24,9 @@ header	{
 #menuLateral a{
         display: inline;
         text-decoration: underline;
-        color:rgb(42, 55, 199);
+        color:rgb(255, 251, 251);
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 50%;
+        font-size: 60%;
         justify-content: space-between;
 }  
 
