@@ -1,3 +1,5 @@
+using AjudaAiAPI.Connection;
+
 namespace AjudaAiAPI
 {
     public class Program
