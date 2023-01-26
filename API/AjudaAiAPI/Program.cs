@@ -1,4 +1,5 @@
 using AjudaAiAPI.Connection;
+using AjudaAiAPI.Context;
 
 namespace AjudaAiAPI
 {
@@ -14,6 +15,8 @@ namespace AjudaAiAPI
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            // Liberar injeção de dependência
+            builder.Services.AddDbContext<TesteContext>();
 
             var app = builder.Build();
 
