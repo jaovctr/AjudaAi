@@ -1,6 +1,7 @@
-﻿using AjudaAiAPI.Connection;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MySql.Data.MySqlClient;
+using System.Security.Cryptography.X509Certificates;
 
 namespace AjudaAiAPI.Controllers
 {
@@ -8,12 +9,31 @@ namespace AjudaAiAPI.Controllers
     [ApiController]
     public class ConnectionController : ControllerBase
     {       
+        private readonly IConfiguration _configuration;
+        
+        public ConnectionController(IConfiguration configuration) { _configuration = configuration; }
         [HttpGet]
-        public async Task<ActionResult<object>> TestarConexao()
+        public ActionResult<object> TestarConexao()
         {
-            ConnectionClass c = new ConnectionClass();
+            string status = "nothing happened";
+            try
+            {
 
-            return c.Conectar();
+                var connectionStr = _configuration["ConnectionStrings:Railway"];
+                MySqlConnection connection = new MySqlConnection();
+                connection.ConnectionString = connectionStr;
+                connection.Open();
+                status = "connected";
+            }
+            catch (MySqlException ex)
+            {
+                status = ex.Message;
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+
+            return status;
+
         }
     }
 }
