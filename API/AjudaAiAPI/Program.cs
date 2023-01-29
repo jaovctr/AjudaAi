@@ -1,5 +1,5 @@
 using AjudaAiAPI.Connection;
-using AjudaAiAPI.Context;
+//using AjudaAiAPI.Context;
 
 namespace AjudaAiAPI
 {
@@ -16,7 +16,7 @@ namespace AjudaAiAPI
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             // Liberar injeção de dependência
-            builder.Services.AddDbContext<TesteContext>();
+            //builder.Services.AddDbContext<TesteContext>();
 
             var app = builder.Build();
 

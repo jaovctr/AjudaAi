@@ -16,6 +16,8 @@ Scaffold-DbContext "server=127.0.0.1;uid=root;pwd=root;database=teste" Mysql.Ent
 
 Para API: Criar Controller com açõs do Entity Framework
 Selecionar a Model do banco e a classe de contexto
-colocar o seguinte c´´odigo na program.cs para liberar injeção de dep.
+colocar o seguinte codigo na program.cs para liberar injeção de dep.
  // Liberar injeção de dependência
  builder.Services.AddDbContext<TesteContext>();//trocar o nome da context de acordo com a necessidade
+
+"server=containers-us-west-117.railway.app:8048;dns-srv=true;uid=root;pwd=hPF8hemC7JW6yCHuGGKZ;database=railway"

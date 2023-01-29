@@ -4,18 +4,21 @@ namespace AjudaAiAPI.Connection
 {
     public class ConnectionClass
     {
-        protected string connectionstr = "server=127.0.0.1;uid=root;pwd=root;database=teste";
-		public string Conectar()
+		//dotnet user-secrets set "ConnectionStrings:Railway" "server=containers-us-west-117.railway.app:8048;dns-srv=true;uid=root;pwd=hPF8hemC7JW6yCHuGGKZ;database=railway"
+		string connectionstr = "server=containers-us-west-117.railway.app;port=8048;user id=root;password=hPF8hemC7JW6yCHuGGKZ;database=railway";
+                               
+
+        public string Conectar()
         {
 			string status = "nothing happened";
 			try
 			{
-				MySqlConnection connection = new MySql.Data.MySqlClient.MySqlConnection();
+				MySqlConnection connection = new MySqlConnection();
 				connection.ConnectionString = connectionstr;
 				connection.Open();
 				status = "connected";
 			}
-			catch (MySql.Data.MySqlClient.MySqlException ex)
+			catch (MySqlException ex)
 			{
 				status = ex.Message;
 				Console.WriteLine(ex.Message);
