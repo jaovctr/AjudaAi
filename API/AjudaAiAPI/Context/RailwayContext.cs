@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
 namespace AjudaAiAPI.Context;
@@ -23,8 +25,16 @@ public partial class RailwayContext : DbContext
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
+    public static string StrConexao()
+    {
+        var builder = WebApplication.CreateBuilder();
+        var strCon = 
+         builder.Configuration.GetConnectionString("Railway");
+        return strCon.ToString();
+    }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseMySQL("Name=ConnectionStrings:Railway");
+            => optionsBuilder.UseMySQL(StrConexao());
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
