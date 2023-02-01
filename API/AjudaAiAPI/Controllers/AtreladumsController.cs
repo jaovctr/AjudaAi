@@ -9,7 +9,7 @@ using AjudaAiAPI.Context;
 
 namespace AjudaAiAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Atreladums")]
     [ApiController]
     public class AtreladumsController : ControllerBase
     {

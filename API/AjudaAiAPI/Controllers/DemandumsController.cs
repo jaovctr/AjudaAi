@@ -9,7 +9,7 @@ using AjudaAiAPI.Context;
 
 namespace AjudaAiAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Demandums")]
     [ApiController]
     public class DemandumsController : ControllerBase
     {
