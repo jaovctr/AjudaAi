@@ -1,40 +1,9 @@
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-table caption{
-    font-style: italic;
-    font-size: 1.6rem;
-    text-align: left;
-    margin-bottom: 1rem;
-}
-
-table td, table th{
-    padding: 0.5rem;
-    text-align: center;
-    border: 0.1rem solid var(--gray-color);
-}
-
-table th{
-    background: rgb(251, 113, 28);
-}
-
-.responsive-table{
-    overflow: hidden;
-    overflow-y: auto;
-}
-
-.titulo-pagina{
-    text-align: center;
-}
-
 .formulario {
     background-color: white;
+    padding: 80px 50px 50px 80px;
     text-align: center;
-    padding: 20px 20px 20px 20px;
     margin: auto;
-    width: 70%;
+    width: 420px;
     height: auto;
     position: absolute;
     top: 50%;
@@ -43,47 +12,35 @@ table th{
     border-radius: 50px;
 }
 
-.titulo {
-    padding: 5px ;
-    border: solid 2px #dcdee0;
-    border-radius: 5px;
-    font-weight: normal;
-    margin: 5px;
-    text-align: left;
-    width: 320px;
-}
-
 .descricao-demanda {
-    padding: 5px ;
+    padding: 30px 90px;
     border: solid 2px #dcdee0;
     border-radius: 5px;
     font-weight: normal;
-    margin: 5px;
-    text-align: left;
+    margin: px;
 }
 
-.botao-cadastro {
-    background-color: #00A400;
+.botao-chat {
+    background-color: #5200a4;
     border-radius: 5px;
     padding: 10px 20px;
     font-size: large;
     font-weight: bold;
     color: white;
     font-family: "Montserrat", sans-serif;
-    align: center;
 }
 
-.botao-cadastro:hover {
-    background-color: rgb(62, 131, 45);
+.botao-chat:hover {
+    background-color: #5200a4;
     cursor: pointer;
 }
 
 .radio {
     display: inline-block;
-    padding: 5px;
+    padding: 4px;
     border: solid 2px #dcdee0;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: normal;
     margin: 0 5px;
 }
@@ -93,14 +50,13 @@ table th{
     color: blue;
 }
 
-
-.tag {
+.select-demanda {
     display: inline-block;
     padding: 5px;
     border: solid 2px #dcdee0;
     background-color: transparent;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: normal;
     margin: 0 5px;
     padding: 0 3px;
@@ -112,9 +68,8 @@ table th{
     padding-bottom: 5px;
     display: block;
     text-align: left;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: normal;
-    font-weight: bold;
 }
 
 .fa-xmark {
@@ -127,7 +82,7 @@ table th{
 @media (max-width: 768px) {
     .formulario {
         background-color: rgb(255, 255, 255);
-        text-align: left;
+        text-align: center;
         margin: auto;
         width: 386px;
         height: 490px;
@@ -143,7 +98,7 @@ table th{
         padding: 0 10px;
         border: solid 2px #dcdee0;
         border-radius: 5px;
-        font-size: 14px;
+        font-size: 15px;
         font-weight: normal;
         margin: 0 10px;
     }
@@ -152,7 +107,7 @@ table th{
 @media (max-width: 576px) {
     .formulario {
         background-color: rgb(255, 255, 255);
-        text-align: left;
+        text-align: center;
         margin: auto;
         width: 400px;
         height: 540px;

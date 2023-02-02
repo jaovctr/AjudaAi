@@ -1,13 +1,50 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table caption{
+    font-style: italic;
+    font-size: 1.6rem;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+table td, table th{
+    padding: 0.5rem;
+    text-align: center;
+    border: 0.1rem solid var(--gray-color);
+}
+
+table th{
+    background: rgb(251, 113, 28);
+}
+
+table tr{
+    border-bottom: 1px solid #ddd;
+}
+
+svg{
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+.responsive-table{
+    overflow: hidden;
+    overflow-y: auto;
+}
+
 .titulo-pagina{
     text-align: center;
+    font-size: 45px;
 }
 
 .formulario {
     background-color: white;
     text-align: center;
-    padding: 170px 20px 20px 20px;
+    padding: 20px 20px 20px 20px;
     margin: auto;
-    width: 420px;
+    width: 90%;
     height: auto;
     position: absolute;
     top: 50%;
@@ -91,10 +128,17 @@
 }
 
 .fa-xmark {
-    position: absolute;
-    margin-left: 175px;
+    /*margin-left: 175px;*/
     height: 40px;
     color: black;
+}
+
+.visualizar_demanda img {
+    max-width: 25px;
+}
+
+.visualizar_demanda {
+    display: inline-block;
 }
 
 @media (max-width: 768px) {

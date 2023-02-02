@@ -1,6 +1,6 @@
 .formulario {
     background-color: white;
-    padding: 80px 20px 20px 20px;
+    padding: 30px 20px 20px 20px;
     text-align: center;
     margin: auto;
     width: 420px;
@@ -14,7 +14,8 @@
 
 .botao-aceitar {
     padding: 1px;
-    background-color: #2ea400;
+    /*background-color: #2ea400;*/
+    background-color: rgb(15, 15, 103);
     border-radius: 5px;
     padding: 10px 20px;
     font-size: large;
@@ -24,8 +25,10 @@
 }
 
 .botao-aceitar:hover {
-    background-color: #ffffff;
+    background-color: #fff;
     cursor: pointer;
+    color: rgb(15, 15, 103);
+    border-color: rgb(15, 15, 103);
 }
 
 .descricao-de-titulo, .descricao-de-pergunta {
