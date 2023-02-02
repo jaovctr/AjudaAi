@@ -15,7 +15,10 @@ def index():
 def nova_demanda():
 #     if 'usuario_logado' not in session or session['usuario_logado'] is None:
 #         return login_usuario('nova_demanda')
-    return render_template('nova_demanda.html')
+#     return render_template('nova_demanda.html')
+    
+    flash(f'Funcionalidade indisponível no momento!', category='info')
+    return redirect(url_for('index'))
 
 
 @aplicacao.route('/lista_demandas')
@@ -30,16 +33,11 @@ def minhas_demandas():
     return render_template('minhas_demandas.html', demandas=facade.listagem_demandas(1))
 
 
-@aplicacao.route('/visualizar_demanda/<int:cod>/<int:pagina>')
-def visualizar_demanda(cod, pagina):
+@aplicacao.route('/visualizar_demanda/<int:cod>')
+def visualizar_demanda(cod):
     demanda = facade.busca_demanda_id(cod)
     
-    if pagina == 1:
-        pgn = 'lista_demandas'
-    else:
-        pgn = 'minhas_demandas'
-        
-    return render_template('visualizar_demanda.html', demanda=demanda, pagina_retorno=pgn)
+    return render_template('visualizar_demanda2.html', demanda=demanda)
 
 
 @aplicacao.route('/apagar_demanda/<int:cod>/<int:pagina>')
