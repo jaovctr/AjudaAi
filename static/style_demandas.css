@@ -20,6 +20,9 @@ table th{
     background: rgb(251, 113, 28);
 }
 
+table tr{
+    border-bottom: 1px solid #ddd;
+}
 
 svg{
     margin-left: 0px;
@@ -41,7 +44,7 @@ svg{
     text-align: center;
     padding: 20px 20px 20px 20px;
     margin: auto;
-    width: 75%;
+    width: 90%;
     height: auto;
     position: absolute;
     top: 50%;
@@ -128,6 +131,14 @@ svg{
     /*margin-left: 175px;*/
     height: 40px;
     color: black;
+}
+
+.visualizar_demanda img {
+    max-width: 25px;
+}
+
+.visualizar_demanda {
+    display: inline-block;
 }
 
 @media (max-width: 768px) {

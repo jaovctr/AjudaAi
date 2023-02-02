@@ -56,14 +56,15 @@ img {
 }
  
 .card {  
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-left: 40px; 
+    margin-top: 30px;
+    margin-left: 20px;
+    border-radius: 2rem;
+    display: inline-block;
 }
 
 .opcao {    
     padding: .50rem 1.5rem;
-    border: 4px solid black;
+    border: 4px solid rgba(244,186,80,255);
     border-radius: 2rem;
     background-color: white;
     text-transform: uppercase;

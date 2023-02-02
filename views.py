@@ -1,3 +1,4 @@
+import facade
 from flask import *
 from aplicacao import aplicacao
 
@@ -15,6 +16,40 @@ def nova_demanda():
 #     if 'usuario_logado' not in session or session['usuario_logado'] is None:
 #         return login_usuario('nova_demanda')
     return render_template('nova_demanda.html')
+
+
+@aplicacao.route('/lista_demandas')
+def lista_demandas():
+    return render_template('lista_demandas.html', demandas=facade.listagem_demandas())
+
+
+@aplicacao.route('/minhas_demandas')
+def minhas_demandas():
+#     if 'usuario_logado' not in session or session['usuario_logado'] is None:
+#         return login_usuario('nova_demanda')
+    return render_template('minhas_demandas.html', demandas=facade.listagem_demandas(1))
+
+
+@aplicacao.route('/visualizar_demanda/<int:cod>/<int:pagina>')
+def visualizar_demanda(cod, pagina):
+    demanda = facade.busca_demanda_id(cod)
+    
+    if pagina == 1:
+        pgn = 'lista_demandas'
+    else:
+        pgn = 'minhas_demandas'
+        
+    return render_template('visualizar_demanda.html', demanda=demanda, pagina_retorno=pgn)
+
+
+@aplicacao.route('/apagar_demanda/<int:cod>/<int:pagina>')
+def apagar_demanda(cod, pagina):
+    demanda = facade.apaga_demanda(cod)
+    
+    if pagina == 1: # lista geral
+        return redirect(url_for('lista_demandas'))
+    else:
+        return redirect(url_for('minhas_demandas'))
 
 
 @aplicacao.route('/criar', methods=['POST'])
