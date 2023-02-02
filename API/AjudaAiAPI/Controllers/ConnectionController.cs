@@ -5,7 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace AjudaAiAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("/")]
     [ApiController]
     public class ConnectionController : ControllerBase
     {       

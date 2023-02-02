@@ -9,7 +9,7 @@ using AjudaAiAPI.Context;
 
 namespace AjudaAiAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("/Tags")]
     [ApiController]
     public class TagsController : ControllerBase
     {
