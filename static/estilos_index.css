@@ -55,19 +55,10 @@ img {
     font-weight: bold;
 }
  
-#div2 {  
+.card {  
     padding-top: 30px;
     padding-bottom: 30px;
     padding-left: 40px; 
-} 
-
-.opcao a {
-    color: rgb(92, 86, 86);
-}
-
-.opcao a:hover {
-    color: rgb(92, 86, 86);
-    text-decoration: none;
 }
 
 .opcao {    
@@ -76,4 +67,13 @@ img {
     border-radius: 2rem;
     background-color: white;
     text-transform: uppercase;
+}
+
+.opcao a {
+    color: rgb(92, 86, 86);
+}
+
+.opcao a:hover {
+    color: rgb(92, 86, 86);
+    text-decoration: none;
 }
