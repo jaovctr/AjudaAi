@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "apis1": {
-      "apiEndpoint": "https://ajudaaiapi.azure-api.net/",
-      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/AjudaAiapi/apis/AjudaAiAPIv1",
-      "type": "apis.azure"
-    }
-  }
-}

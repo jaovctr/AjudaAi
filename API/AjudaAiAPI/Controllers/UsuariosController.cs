@@ -9,7 +9,7 @@ using AjudaAiAPI.Context;
 
 namespace AjudaAiAPI.Controllers
 {
-    [Route("api/Usuarios")]
+    [Route("/Usuarios")]
     [ApiController]
     public class UsuariosController : ControllerBase
     {
