@@ -36,3 +36,7 @@ demandas = [
         'codUsuario': 5
     },
 ]
+
+
+def prox_id_demanda():
+    return demandas[-1]['codDemanda'] + 1

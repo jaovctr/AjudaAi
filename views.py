@@ -65,8 +65,7 @@ def minhas_demandas():
 
 @aplicacao.route('/visualizar_demanda/<int:cod>')
 def visualizar_demanda(cod):
-    demanda = facade.busca_demanda_id(cod)
-    
+    demanda = facade.busca_demanda_id(cod)[1]
     return render_template('visualizar_demanda2.html', demanda=demanda)
 
 
