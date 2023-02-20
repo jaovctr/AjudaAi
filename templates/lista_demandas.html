@@ -44,7 +44,7 @@
                                 <td>{{ demanda['descricao'] }}</td>
                                 <td>{{ demanda['status'] }}</td>
                                 <td>
-                                    <a class="visualizar_demanda" href="{{ url_for('visualizar_demanda', cod=demanda['codDemanda'], pagina=1) }}">
+                                    <a class="visualizar_demanda" href="{{ url_for('visualizar_demanda', cod=demanda['codDemanda']) }}">
                                         <img src="../static/img/visualizar.png">
                                     </a>
                                 </td>

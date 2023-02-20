@@ -1,16 +1,14 @@
 from model import *
 
+def listagem_tags():
+    return tags
+
+
 def listagem_demandas(id_usuario=0):
     if id_usuario:
         return [d for d in demandas if d['codUsuario'] == id_usuario]
     else:
         return demandas
-
-
-def busca_demanda_id(id):
-    for indice, demanda in enumerate(demandas):
-        if demanda['codDemanda'] == id:
-            return indice, demanda
 
 
 def apaga_demanda(id):
@@ -21,6 +19,8 @@ def apaga_demanda(id):
 
 def salvar_demanda(titulo, tipo, descricao, tags, codDemanda=0, codUsuario=0):
     global demandas
+    lista = [busca_tag_id(int(id)) for id in tags]
+    tags = '; '.join(lista)
 
     if codDemanda:
         pos = busca_demanda_id(id)[0]
