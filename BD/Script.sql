@@ -26,6 +26,7 @@ CREATE TABLE IF NOT EXISTS `railway`.`Usuario` (
   `Email` VARCHAR(100) NOT NULL,
   `Conhecimento` TEXT(500) NOT NULL,
   `Avaliacao` FLOAT NULL,
+  `Curso` VARCHAR (45),
   `Nome` VARCHAR(255) NOT NULL,
   `Senha` VARCHAR(75) NOT NULL,
   `Usuario` VARCHAR(100) NOT NULL,
@@ -120,20 +121,44 @@ CREATE TABLE IF NOT EXISTS `railway`.`Topicos`(
     PRIMARY KEY (`idTopicos`,`idForum`,`codUsuario`),
     UNIQUE INDEX `idTopicos_UNIQUE` (`idTopicos` ASC) VISIBLE,
     INDEX `fk_Forum_idForum` (`idForum` ASC) VISIBLE,
-    INDEX `fk_Usuario_codUsuario` (`codUsuario` ASC) VISIBLE,
+    INDEX `fk_Topicos_codUsuario` (`codUsuario` ASC) VISIBLE,
     CONSTRAINT `fk_Forum_idForum`
 		FOREIGN KEY (`idForum`)
         REFERENCES `railway`.`Forum` (`idForum`)
         ON DELETE NO ACTION 
         ON UPDATE NO ACTION,
-	CONSTRAINT `fk_Usuario_codUsuario`
+	CONSTRAINT `fk_Topicos_codUsuario`
 		FOREIGN KEY (`codUsuario`)
         REFERENCES `railway`.`Usuario` (`codUsuario`)
 		ON DELETE NO ACTION
 		ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
+-- -----------------------------------------------------
+-- Table `railway`.`Comentario`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `railway`.`Comentario`(
+	`idComentario` INT NOT NULL,
+    `codUsuario` INT NOT NULL,
+    `idTopicos` INT NOT NULL,
+    `data_comentario` DATE NOT NULL,
+    `mensagem` TEXT(500) NOT NULL,
+    PRIMARY KEY (`idComentario`,`codUsuario`,`idTopicos`),
+    UNIQUE INDEX `idComentario_UNIQUE` (`idComentario` ASC) VISIBLE,
+    INDEX `fk_Comentario_codUsuario` (`codUsuario` ASC) VISIBLE,
+	INDEX `fk_Topicos_idTopicos` (`idTopicos` ASC) VISIBLE,
+	CONSTRAINT `fk_Comentario_codUsuario`
+		FOREIGN KEY (`codUsuario`)
+        REFERENCES `railway`.`usuario` (`codUsuario`)
+        ON DELETE NO ACTION
+		ON UPDATE NO ACTION,
+	CONSTRAINT `fk_Topicos_idTopicos`
+		FOREIGN KEY (`idTopicos`)
+        REFERENCES `railway`.`Topicos` (`idTopicos`)
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+)
+ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
