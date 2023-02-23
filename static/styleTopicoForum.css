@@ -1,0 +1,125 @@
+/* Estilos gerais */
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #1a1a2e;
+	color: #000;
+}
+header, footer {
+	background-color: rgb(15, 15, 103);
+	color: #fff;
+
+}
+
+header {
+    font-family: 'Solitreo', cursive;
+    font-size: 30px; 
+    text-align: center;
+    color: rgba(10, 89, 200,255);
+}
+
+#menuLateral a {
+    display: inline;
+    text-decoration: underline;
+    color:rgb(255, 251, 251);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 65%;
+    justify-content: space-between;
+    margin-right: 10px;
+}
+
+#allTags a{
+	display: inline;
+    text-decoration: underline;
+    color:rgb(225, 127, 42);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 65%;
+    justify-content: space-between;
+    margin-right: 10px;
+}
+
+main {
+	margin: 20px;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+article, section {
+	margin-bottom: 20px;
+}
+
+h2 {
+	font-size: 24px;
+	margin-bottom: 10px;
+	color: #000;
+}
+h3 {
+	font-size: 20px;
+	margin-bottom: 10px;
+	color: #000;
+}
+h4 {
+	font-size: 16px;
+	margin-bottom: 10px;
+	color: #000;
+}
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+li {
+	padding: 10px;
+	border: 1px solid #ccc;
+	margin-bottom: 10px;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 ;
+
+}
+
+.answer-header {
+	overflow-y: auto;
+	max-height: 200px;
+}
+
+.answer-header h4{
+	text-decoration: underline;
+	color: black;
+}
+
+.like-button{
+	margin-right: 20px;
+}
+
+.like-button:hover, .dislike-button:hover {
+	text-decoration: underline;
+	cursor:pointer;
+}
+
+.avatar {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+
+.container-button{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: center;
+}
+
+.back-button a{
+	color: black;
+}
+
+.like-button img, .dislike-button img {
+	width: 25px;
+	height: 25px;
+}
+  
+.like-button img:hover, .dislike-button img:hover {
+	opacity: 0.7;
+}
