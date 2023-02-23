@@ -1,0 +1,88 @@
+.formulario {
+    background-color: white;
+    padding: 80px 20px 20px 20px;
+    text-align: center;
+    margin: auto;
+    width: 420px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50px;
+}
+
+.botao-aceitar {
+    padding: 1px;
+    background-color: #2ea400;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+}
+
+.botao-aceitar:hover {
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.descricao-de-titulo, .descricao-de-pergunta {
+    padding-bottom: 1px;
+    display: block;
+    text-align: left;
+    font-size: 15px;
+    font-weight: normal;
+    font-weight: bold;
+}
+
+.descricao-de-texto {
+    padding-bottom: 1px;
+    display: block;
+    text-align: left;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.fa-xmark {
+    position: absolute;
+    margin-left: 175px;
+    height: 40px;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .formulario {
+        background-color: rgb(255, 255, 255);
+        text-align: center;
+        margin: auto;
+        width: 386px;
+        height: 490px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .formulario {
+        background-color: rgb(255, 255, 255);
+        text-align: center;
+        margin: auto;
+        width: 400px;
+        height: 540px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 20px;
+    }
+
+    .fa-xmark {
+        position: absolute;
+        right: 10px;
+    }
+}
