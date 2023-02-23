@@ -99,6 +99,40 @@ CREATE TABLE IF NOT EXISTS `railway`.`Atrelada` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `railway`.`Forum`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `railway`.`Forum`(
+	`idForum` INT NOT NULL,
+    PRIMARY KEY (`idForum`),
+    UNIQUE INDEX `idForum_UNIQUE` (`idForum` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `railway`.`Topicos`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `railway`.`Topicos`(
+	`idTopicos` INT NOT NULL,
+    `idForum` INT NOT NULL,    
+    `codUsuario` INT NOT NULL,
+    `data_topico` DATE NOT NULL,
+    `Texto` TEXT(500),
+    PRIMARY KEY (`idTopicos`,`idForum`,`codUsuario`),
+    UNIQUE INDEX `idTopicos_UNIQUE` (`idTopicos` ASC) VISIBLE,
+    INDEX `fk_Forum_idForum` (`idForum` ASC) VISIBLE,
+    INDEX `fk_Usuario_codUsuario` (`codUsuario` ASC) VISIBLE,
+    CONSTRAINT `fk_Forum_idForum`
+		FOREIGN KEY (`idForum`)
+        REFERENCES `railway`.`Forum` (`idForum`)
+        ON DELETE NO ACTION 
+        ON UPDATE NO ACTION,
+	CONSTRAINT `fk_Usuario_codUsuario`
+		FOREIGN KEY (`codUsuario`)
+        REFERENCES `railway`.`Usuario` (`codUsuario`)
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
