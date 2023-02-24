@@ -2,6 +2,7 @@ import facade
 from flask import *
 from aplicacao import aplicacao
 
+usuario_padrao = 1
 visualizar_lista = 0
 
 def login_usuario(url_seguinte):
@@ -29,18 +30,11 @@ def criar_demanda():
 
     for i in range(4):
         tag_id = request.form[f'select_tag{i}']
-        
         if tag_id:
             tags.append(tag_id)
 
-    if facade.salvar_demanda(titulo, tipo, descricao, tags):
-        flash('Demanda criada com sucesso! Acesse a página Minhas Demandas para visualizar suas demandas.',
-        category='success')
-    else:
-        flash('Ocorreu um erro ao cadastrar sua demanda! Tente novamente em outro momento e, '
-            + 'se o erro persistir, entre em contato conosco.',
-        category='danger')
-
+    facade.salvar_demanda(titulo, tipo, descricao, tags, codUsuario=usuario_padrao)
+    flash('Demanda criada com sucesso!', category='success')
     return redirect(url_for('index'))
 
 
@@ -73,17 +67,13 @@ def retorna_lista():
 @aplicacao.route('/visualizar_demanda/<int:cod>')
 def visualizar_demanda(cod):
     demanda = facade.busca_demanda_id(cod)[1]
-    return render_template('visualizar_demanda2.html', demanda=demanda)
+    return render_template('visualizar_demanda.html', demanda=demanda)
 
 
-@aplicacao.route('/apagar_demanda/<int:cod>/<int:pagina>')
-def apagar_demanda(cod, pagina):
+@aplicacao.route('/apagar_demanda/<int:cod>')
+def apagar_demanda(cod):
     demanda = facade.apaga_demanda(cod)
-    
-    if pagina == 1: # lista geral
-        return redirect(url_for('lista_demandas'))
-    else:
-        return redirect(url_for('minhas_demandas'))
+    return redirect(url_for('retorna_lista'))
 
 
 @aplicacao.route('/login')
