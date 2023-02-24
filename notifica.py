@@ -29,7 +29,7 @@ def enviar_email_para(assunto, addr, corpo_email, server_email):
             <head>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <head>
-            <body style="width:70%; margin: 0px 20px; margin:auto;">
+            <body style="width:60%; margin: 0px 20px; margin:auto;">
                 <header style="background-color:rgb(15, 15, 103);
                         border-radius:15px 15px 0px 0px; padding:3px 0px;">
                     <h1><img src="cid:logo" width="100" height="100"
@@ -67,6 +67,3 @@ def enviar_emails(assunto, addr, corpo):
         enviar_email_para(assunto, to, corpo, server_email)
 
     server_email.close()
-
-
-enviar_emails('Teste2', ['caiofslv@gmail.com'], 'Ola Caio')
