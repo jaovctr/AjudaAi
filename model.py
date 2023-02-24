@@ -46,16 +46,59 @@ tags = [
         {'nome': 'LETRAS INGLÊS - Tempos Verbais', 'id': 6}
     ]
 
+usuarios = [
+    {
+        'codUsuario': 1,
+        'nome': 'Caio Feitosa',
+        'email': 'caiofeitosa@ufpi.edu.br',
+        'tags': [
+            'COMPUTAÇÃO - Programação Estruturada',
+            'COMPUTAÇÃO - Banco de Dados',
+            'LETRAS INGLÊS - Confecção de Abstract'
+        ]
+    },
+    {
+        'codUsuario': 2,
+        'nome': 'João Victor',
+        'email': 'jaovctr@ufpi.edu.br',
+        'tags': [
+            'COMPUTAÇÃO - Banco de Dados',
+            'LETRAS INGLÊS - Confecção de Abstract'
+        ]
+    },
+    {
+        'codUsuario': 3,
+        'nome': 'Ana Letícia',
+        'email': 'let0210@ufpi.edu.br',
+        'tags': [
+            'ESTATÍSTICA - Análise Combinatória',
+            'FÍSICA - Leis de Newton',
+            'LETRAS INGLÊS - Confecção de Abstract',
+            'LETRAS INGLÊS - Tempos Verbais'
+        ]
+    },
+    {
+        'codUsuario': 4,
+        'nome': 'Maria Clara',
+        'email': 'mariaclaraacoelho@ufpi.edu.br',
+        'tags': [
+            'ESTATÍSTICA - Análise Combinatória',
+            'LETRAS INGLÊS - Confecção de Abstract',
+            'LETRAS INGLÊS - Tempos Verbais'
+        ]
+    },
+    {
+        'codUsuario': 5,
+        'nome': 'Anderson',
+        'email': 'andersonpereira@ufpi.edu.br',
+        'tags': [
+            'COMPUTAÇÃO - Banco de Dados',
+            'FÍSICA - Leis de Newton',
+            'LETRAS INGLÊS - Confecção de Abstract',
+        ]
+    }
+]
+
 
 def prox_id_demanda():
     return demandas[-1]['codDemanda'] + 1
-
-
-def busca_demanda_id(id):
-    for indice, demanda in enumerate(demandas):
-        if demanda['codDemanda'] == id:
-            return indice, demanda
-
-
-def busca_tag_id(id):
-    return [t['nome'] for t in tags if t['id'] == id][0]
