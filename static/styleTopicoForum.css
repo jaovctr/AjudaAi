@@ -90,12 +90,17 @@ li {
 	color: black;
 }
 
+.question-header a{
+	text-decoration: underline;
+	color: black;
+}
+
+
 .like-button{
 	margin-right: 20px;
 }
 
-.like-button:hover, .dislike-button:hover {
-	text-decoration: underline;
+.like-button:hover, .dislike-button:hover , input.enviar-button:hover{
 	cursor:pointer;
 }
 
@@ -122,4 +127,53 @@ li {
   
 .like-button img:hover, .dislike-button img:hover {
 	opacity: 0.7;
+}
+
+.enviar-button {
+    background-color: #00A400;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+}
+
+.enviar-button:hover {
+    background-color: rgb(62, 131, 45);
+    cursor: pointer;
+}
+
+.nome-caixa-resposta{
+	padding-bottom: 5px;
+    display: block;
+    text-align: left;
+    font-size: 20px;
+    font-weight: normal;
+    font-weight: bold;
+}
+
+
+.obs{
+	padding-left: 10px;
+}
+
+.back-button{
+    border:none;
+    border-radius: 3px;
+    padding: 8px 16px;
+    background-color:white;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+    cursor: pointer;
+}
+
+.back-button:hover{
+    opacity: 0.7;
+}
+
+.back-button a{
+    color: black;
+    text-decoration: none;
 }
