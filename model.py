@@ -36,3 +36,69 @@ demandas = [
         'codUsuario': 5
     },
 ]
+
+tags = [
+        {'nome': 'COMPUTAÇÃO - Programação Estruturada', 'id': 1},
+        {'nome': 'COMPUTAÇÃO - Banco de Dados', 'id': 2},
+        {'nome': 'ESTATÍSTICA - Análise Combinatória', 'id': 3},
+        {'nome': 'FÍSICA - Leis de Newton', 'id': 4},
+        {'nome': 'LETRAS INGLÊS - Confecção de Abstract', 'id': 5},
+        {'nome': 'LETRAS INGLÊS - Tempos Verbais', 'id': 6}
+    ]
+
+usuarios = [
+    {
+        'codUsuario': 1,
+        'nome': 'Caio Feitosa',
+        'email': 'caiofeitosa@ufpi.edu.br',
+        'tags': [
+            'COMPUTAÇÃO - Programação Estruturada',
+            'COMPUTAÇÃO - Banco de Dados',
+            'LETRAS INGLÊS - Confecção de Abstract'
+        ]
+    },
+    {
+        'codUsuario': 2,
+        'nome': 'João Victor',
+        'email': 'jaovctr@ufpi.edu.br',
+        'tags': [
+            'COMPUTAÇÃO - Banco de Dados',
+            'LETRAS INGLÊS - Confecção de Abstract'
+        ]
+    },
+    {
+        'codUsuario': 3,
+        'nome': 'Ana Letícia',
+        'email': 'let0210@ufpi.edu.br',
+        'tags': [
+            'ESTATÍSTICA - Análise Combinatória',
+            'FÍSICA - Leis de Newton',
+            'LETRAS INGLÊS - Confecção de Abstract',
+            'LETRAS INGLÊS - Tempos Verbais'
+        ]
+    },
+    {
+        'codUsuario': 4,
+        'nome': 'Maria Clara',
+        'email': 'mariaclaraacoelho@ufpi.edu.br',
+        'tags': [
+            'ESTATÍSTICA - Análise Combinatória',
+            'LETRAS INGLÊS - Confecção de Abstract',
+            'LETRAS INGLÊS - Tempos Verbais'
+        ]
+    },
+    {
+        'codUsuario': 5,
+        'nome': 'Anderson',
+        'email': 'andersonpereira@ufpi.edu.br',
+        'tags': [
+            'COMPUTAÇÃO - Banco de Dados',
+            'FÍSICA - Leis de Newton',
+            'LETRAS INGLÊS - Confecção de Abstract',
+        ]
+    }
+]
+
+
+def prox_id_demanda():
+    return demandas[-1]['codDemanda'] + 1
