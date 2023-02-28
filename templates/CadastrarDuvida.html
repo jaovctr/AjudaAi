@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cadastrar dúvida</title>
+	<link rel="stylesheet" type="text/css" href="styleCadastrarDuvida.css">
+</head>
+<body>
+	<header>
+		<header>
+			<h1><img src="remove bg logo.png" width="150" height="130"></h1>
+			<nav id="menuLateral">
+				<a href="{{ url_for('index') }}">Página Inicial</a>
+				<a href="{{ url_for('entrar') }}">Entrar</a>
+				<a href="{{ url_for('sobre') }}">Sobre</a>
+				<a href="{{ url_for('contato') }}">Fale com a gente</a>
+			</nav>
+		</header>
+	</header>
+	<main>
+		<h2>Formule sua dúvida</h2>
+
+        <form method="POST" action="#" >
+            <label class="descricao-de-area">Informe o título da pergunta: </label>
+            <input type="text" name="titulo" id="titulo" placeholder="Título" required class="titulo">
+            <br><br>
+
+            <label class="descricao-de-area">Selecione até quatro tags: </label>
+          
+                <select multiple name="select_tag{{ i }}" class="tag" style="height: 100px;">
+                    <option value="">programacao</option>
+                    <option value="">javaScript</option>
+					<option value="">css</option>
+					<option value="">python</option>
+					<option value="">saude</option>
+					<option value="">historia</option>
+					<option value="">exatas</option>
+					<option value="">linguistica</option>
+                    <option value="{{ tag['id'] }}">{{ tag['nome'] }}</option>
+               
+                </select multiple><br>
+           
+            <br><br>
+            <label class="descricao-de-area">Descrição da pergunta: </label>
+            <!-- <form method="get" action="./template/index.html" enctype="multipart/form-data">-->
+            <textarea name="descricao-pergunta" id="descricao-pergunta" placeholder="Digite sua mensagem"  rows="5" cols="30" maxlength="500" class="descricao-pergunta"></textarea>
+            <br><br>
+            
+            <input type="submit" value="Cadastrar" class="botao-cadastro">
+			<label class="obs">Caso não esteja logad@, <a href="https://AjudaAi.com/cadastrar-usuario">clique aqui</a></label>
+
+        </form>
+		
+	</main>
+	<footer>
+		<p><div class="container-button"><button class="back-button"><a href="{{ url_for('inserirAqui') }}">Voltar</a></button></div></p>
+	</footer>
+</body>
+</html>
