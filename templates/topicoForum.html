@@ -2,17 +2,12 @@
 <html>
 <head>
 	<title>Dúvida do Fórum</title>
-
-	<link rel="stylesheet" href="../static/styleTopicoForum.css">
-	<link rel = "shortcut icon" href = "../static/img/favicon_transparent_32x32.ico">
-	<link rel = "shortcut icon" href = "../static/img/like.png">
-	<link rel = "shortcut icon" href = "../static/img/deslike.png">
-
+	<link rel="stylesheet" type="text/css" href="styleTopicoForum.css">
 </head>
 <body>
 	<header>
 		<header>
-			<h1><img src="../static/img/remove bg logo.png" width="150" height="130"></h1>
+			<h1><img src="remove bg logo.png" width="150" height="130"></h1>
 			<nav id="menuLateral">
 				<a href="{{ url_for('index') }}">Página Inicial</a>
 				<a href="{{ url_for('entrar') }}">Entrar</a>
@@ -23,57 +18,76 @@
 	</header>
 	<main>
 		<article>
-			<h2>Como faço para resolver um problema no meu código?
-				<nav id="allTags">
-					<a href="{{ url_for('inserirAqui') }}">#programação</a>
-					<a href="{{ url_for('inserirAqui') }}">#javaScript</a>
-				</nav>
-			</h2>
-			<p>Olá pessoal, estou tendo dificuldades em resolver um problema no meu código. Eu estou tentando criar uma função em JavaScript que some dois números, mas não está funcionando. Já tentei várias coisas, mas ainda não consegui encontrar o erro. Alguém pode me ajudar?</p>
+
+			<div class="question-header">
+				<a href="https://ajudaAi.com.br/perfil-marcelo-carvalho">
+					<img src="iconboy.png" alt="Foto de perfil do autor" class="avatar">
+					<h4>Marcelo Carvalho</h4>
+				</a>
+				<h2>Como faço para resolver um problema no meu código?
+					<nav id="allTags">
+						<a href="{{ url_for('inserirAqui') }}">#programacao</a>
+						<a href="{{ url_for('inserirAqui') }}">#javaScript</a>
+					</nav>
+				</h2>
+				<p>Olá pessoal, estou tendo dificuldades em resolver um problema no meu código. Eu estou tentando criar uma função em JavaScript que some dois números, mas não está funcionando. Já tentei várias coisas, mas ainda não consegui encontrar o erro. Alguém pode me ajudar?</p>
+			</div>
+
 		</article>
 		<section>
 			<h3>Respostas</h3>
 			<ul>
 				<li>
 					<div class="answer-header">
-						<a href="https://exemplo.com/perfil-joao-silva">
-							<img src="../static/img/iconboy.png" alt="Foto de perfil do autor" class="avatar">
+						<a href="https://AjudaAi.com/perfil-joao-silva">
+							<img src="iconboy.png" alt="Foto de perfil do autor" class="avatar">
 							<h4>João Silva</h4>
 						</a>
 						<p>Tente verificar se você está passando os argumentos corretamente para a função e se está retornando o valor correto.</p>	
 					</div>
 					
                     <div class="answer-feedback">
-						<button class="like-button"><img src="../static/img/like.png"></button>
-						<button class="dislike-button"><img src="../static/img/deslike.png"></button>
+						<button class="like-button"><img src="like.png"></button>
+						<button class="dislike-button"><img src="deslike.png"></button>
 					</div>
 				</li>
 				<li>
 					<div class="answer-header">
-						<a href="https://exemplo.com/perfil-maria-santos">
-							<img src="../static/img/icon.png" alt="Foto de perfil do autor" class="avatar">
+						<a href="https://AjudaAi.com/perfil-maria-santos">
+							<img src="icon.png" alt="Foto de perfil do autor" class="avatar">
 							<h4>Maria Santos</h4>
 						</a>
 						<p>Verifique se você está declarando a função corretamente e se está usando o operador de adição (+) para somar os números.</p>
 					</div>
 					
                     <div class="answer-feedback">
-						<button class="like-button"><img src="../static/img/like.png"></button>
-						<button class="dislike-button"><img src="../static/img/deslike.png"></button>
+						<button class="like-button"><img src="like.png"></button>
+						<button class="dislike-button"><img src="deslike.png"></button>
 					</div>
 				</li>
 				<li>
 					<div class="answer-header">
-						<a href="https://exemplo.com/perfil-isabel-pereira">
-							<img src="../static/img/icon2.png" alt="Foto de perfil do autor" class="avatar">
+						<a href="https://AjudaAi.com/perfil-isabel-pereira">
+							<img src="icon2.png" alt="Foto de perfil do autor" class="avatar">
 							<h4>Isabel Pereira</h4>
 						</a>
 						<p>Se possível, compartilhe seu código para que possamos analisar melhor e te ajudar.</p>
 					</div>
 		
                     <div class="answer-feedback">
-						<button class="like-button"><img src="../static/img/like.png"></button>
-						<button class="dislike-button"><img src="../static/img/deslike.png"></button>
+						<button class="like-button"><img src="like.png"></button>
+						<button class="dislike-button"><img src="deslike.png"></button>
+					</div>
+				</li>
+				<li>
+					<div class="your-answer">
+						<form action="#" method="post">
+							<label class="nome-caixa-resposta">Sua resposta: </label>
+							<textarea rows="10" style="width: 1160px" placeholder="Digite seu comentário..." class="caixa-reposta"></textarea>
+							<br><br>
+							<input type="submit" class="enviar-button" value="Enviar">
+							<label class="obs">Caso não esteja logad@, <a href="https://AjudaAi.com/cadastrar-usuario">clique aqui</a></label>
+						</form>
 					</div>
 				</li>
 			</ul>
