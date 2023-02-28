@@ -21,7 +21,11 @@ public partial class Usuario
 
     public string Usuario1 { get; set; } = null!;
 
+    public virtual ICollection<Comentario> Comentarios { get; } = new List<Comentario>();
+
     public virtual ICollection<Demandum> DemandumAjudanteNavigations { get; } = new List<Demandum>();
 
     public virtual ICollection<Demandum> DemandumSolicitanteNavigations { get; } = new List<Demandum>();
+
+    public virtual ICollection<Topico> Topicos { get; } = new List<Topico>();
 }
