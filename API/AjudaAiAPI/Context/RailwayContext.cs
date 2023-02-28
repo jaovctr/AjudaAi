@@ -39,6 +39,7 @@ public partial class RailwayContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             => optionsBuilder.UseMySQL(StrConexao());
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Atreladum>(entity =>
