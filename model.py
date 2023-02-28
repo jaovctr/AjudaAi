@@ -96,6 +96,55 @@ usuarios = [
             'FÍSICA - Leis de Newton',
             'LETRAS INGLÊS - Confecção de Abstract',
         ]
+    },
+    {
+        'codUsuario': 6,
+        'nome': 'Marcelo Carvalho',
+        'email': 'marcelocarvalho@ufpi.edu.br',
+        'tags': []
+    },
+    {
+        'codUsuario': 7,
+        'nome': 'Sara Eduarda',
+        'email': 'saraeduarda@ufpi.edu.br',
+        'tags': []
+    },
+    {
+        'codUsuario': 8,
+        'nome': 'Larissa Silva',
+        'email': 'larissasilva@ufpi.edu.br',
+        'tags': []
+    }
+]
+
+topicos_forum = [
+    {
+        'id': 1,
+        'titulo': 'Como faço para resolver um problema no meu código?',
+        'texto': 'Olá pessoal, estou tendo dificuldades em resolver um problema no meu código.'
+                + 'Eu estou tentando criar uma função em JavaScript que some dois números,'
+                + 'mas não está funcionando. Já tentei várias coisas, mas ainda não consegui'
+                + 'encontrar o erro. Alguém pode me ajudar?',
+        'tags': ['#programacao', '#javaScript', '#frontend'],
+        'codUsuario': 6,
+    },
+    {
+        'id': 2,
+        'titulo': 'Ajuda em CSS',
+        'texto': 'Como fazer um dropdown em CSS?',
+        'tags': ['#programacao', '#css', '#frontend'],
+        'codUsuario': 7,
+    },
+    {
+        'id': 3,
+        'titulo': 'Dijkstra em python',
+        'texto': 'Considere um grafo não direcionado G com N vértices e M arestas, onde cada'
+                + 'aresta tem um peso associado. Escreva uma função em Python que receba G,'
+                + 'bem como dois vértices u e v, e retorne o caminho mínimo de u a v em G,'
+                + 'usando o algoritmo de Dijkstra. Além disso, a função deve ser capaz de lidar'
+                + 'com casos em que u e v não são conectados em G.',
+        'tags': ['#programacao', '#python', '#estruturadedados'],
+        'codUsuario': 8,
     }
 ]
 
