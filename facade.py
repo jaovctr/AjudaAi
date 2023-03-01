@@ -14,7 +14,19 @@ def busca_demanda_id(id):
         if demanda['codDemanda'] == id:
             return indice, demanda
 
+        
+def busca_usuario_id(id):
+    return [u for u in usuarios if u['id'] == id][0]
+    
 
+def listagem_topicos_forum():
+    aux = topicos_forum.copy()
+    for t in aux:
+        t['usuario'] = busca_usuario_id(t['codUsuario'])
+
+    return aux
+    
+    
 def listagem_demandas(id_usuario=0):
     if id_usuario:
         return [d for d in demandas if d['codUsuario'] == id_usuario]
