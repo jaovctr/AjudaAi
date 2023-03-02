@@ -1,0 +1,199 @@
+/* Estilos gerais */
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #1a1a2e;
+	color: #000;
+}
+header, footer {
+	background-color: rgb(15, 15, 103);
+	color: #fff;
+
+}
+
+header {
+    font-family: 'Solitreo', cursive;
+    font-size: 30px; 
+    text-align: center;
+    color: rgba(10, 89, 200,255);
+}
+
+#menuLateral a {
+    display: inline;
+    text-decoration: underline;
+    color:rgb(255, 251, 251);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 65%;
+    justify-content: space-between;
+    margin-right: 10px;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    padding-left: 230px;
+  }
+  
+  input[type="text"] {
+    border: solid;
+    border-radius: 3px;
+    padding: 8px;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+
+  
+.filter-button {
+    background-color: #2088ff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: large;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    align-self: center;
+    cursor: pointer;
+}
+
+.filter-button:hover{
+    opacity: 0.7;
+}
+
+.search-form, .ask-question-button{
+    display: inline;
+ 
+}
+
+.ask-question-button {
+    border:none;
+    border-radius: 3px;
+    padding: 8px 16px;
+    background-color:#11117a;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+    cursor: pointer;
+}
+
+
+
+.modulo-ask-question{
+    text-decoration: none;
+    padding-left: 160px;
+}
+
+#allTags a{
+	display: inline;
+    text-decoration: underline;
+    color:rgb(225, 127, 42);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 100%;
+    justify-content: space-between;
+    margin-right: 10px;
+}
+
+main {
+	margin: 20px;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+article, section {
+	margin-bottom: 20px;
+}
+
+h2 {
+	font-size: 24px;
+	margin-bottom: 10px;
+	color: #000;
+}
+h3 {
+	font-size: 20px;
+	margin-bottom: 10px;
+	color: #000;
+}
+h4 {
+	font-size: 16px;
+	margin-bottom: 10px;
+	color: #000;
+}
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+li {
+	padding: 10px;
+	border: 1px solid #ccc;
+	margin-bottom: 10px;
+	background-color: #fff;
+	border-radius: 5px;
+}
+
+.question-header {
+    height: 230px;
+	overflow-y:auto;
+}
+
+.question-header h4{
+	text-decoration: underline;
+	color: black;
+}
+
+.link-duvida{
+    text-decoration: none;
+    color: black;
+}
+
+
+.like-button{
+	margin-right: 20px;
+}
+
+.like-button:hover, .dislike-button:hover , input.enviar-button:hover{
+	cursor:pointer;
+}
+
+.avatar {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+
+.container-button{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: center;
+}
+
+.back-button{
+    border:none;
+    border-radius: 3px;
+    padding: 8px 16px;
+    background-color:white;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+    cursor: pointer;
+}
+
+.back-button:hover{
+    opacity: 0.7;
+}
+
+.back-button a{
+    color: black;
+    text-decoration: none;
+}
+
+.like-button img, .dislike-button img {
+	width: 25px;
+	height: 25px;
+}
+  
+.like-button img:hover, .dislike-button img:hover {
+	opacity: 0.7;
+}

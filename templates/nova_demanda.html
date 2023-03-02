@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Demanda</title>
+    <link rel = "shortcut icon" href = "../static/img/favicon_transparent_32x32.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../static/style_new_demanda.css">
+    <link rel="stylesheet" href="../static/reset_demandas.css">
+</head>
+
+<body>
+    <main class="formulario">
+        <a href="{{ url_for('index') }}"><i class="fa-solid fa-xmark"></i></a>
+        <h1 class="titulo-pagina">Cadastro de Demanda</h1>
+        <h2 class="titulo-pagina">
+            <img src="../static/img/remove bg logo.png" width="100" height="100">
+        </h2>
+        <p>É rápido e fácil pedir ajuda e compartilhar conhecimento.</p>
+        
+        <form method="POST" action="{{ url_for('criar_demanda') }}" enctype="multipart/form-data">
+            <label class="descricao-de-area">Informe o título da demanda: </label>
+            <input type="text" name="titulo" id="titulo" placeholder="Título" required class="titulo">
+            <br><br>
+
+            <label class="descricao-de-area">Selecione até quatro tags: </label>
+            {% for i in range(4) %}
+                <select name="select_tag{{ i }}" class="tag">
+                    <option value="">---</option>
+                    {% for tag in tags %}
+                        <option value="{{ tag['id'] }}">{{ tag['nome'] }}</option>
+                    {% endfor %}
+                </select><br>
+            {% endfor %}
+            <br>
+            <label class="descricao-de-area">Tipo de demanda:</label>
+            <div class="radio demanda-individual">
+                <label for="demanda-individual">Individual</label>
+                <input type="radio" name="tipo-demanda" id="demanda-individual" value="Individual">
+            </div>
+            <div class="radio demanda-grupo">
+                <label for="demanda-grupo">Aberto a membros</label>
+                <input type="radio" name="tipo-demanda" id="demanda-grupo" value="Aberto a membros">
+            </div>
+            
+            <br><br>
+            <label class="descricao-de-area">Descrição da demanda: </label>
+            <!-- <form method="get" action="./template/index.html" enctype="multipart/form-data">-->
+            <textarea name="descricao-demanda" id="descricao-demanda" placeholder="Digite sua mensagem"  rows="5" cols="30" maxlength="500" class="descricao-demanda"></textarea>
+            <br><br>
+            
+            <input type="submit" value="Cadastrar Demanda" class="botao-cadastro">
+
+        </form>
+
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"
+        integrity="sha512-rpLlll167T5LJHwp0waJCh3ZRf7pO6IT1+LZOhAyP6phAirwchClbTZV3iqL3BMrVxIYRbzGTpli4rfxsCK6Vw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>

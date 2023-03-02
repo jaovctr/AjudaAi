@@ -1,0 +1,154 @@
+/* Estilos gerais */
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #1a1a2e;
+	color: #000;
+}
+header, footer {
+	background-color: rgb(15, 15, 103);
+	color: #fff;
+
+}
+
+header {
+    font-family: 'Solitreo', cursive;
+    font-size: 30px; 
+    text-align: center;
+    color: rgba(10, 89, 200,255);
+}
+
+#menuLateral a {
+    display: inline;
+    text-decoration: underline;
+    color:rgb(255, 251, 251);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 65%;
+    justify-content: space-between;
+    margin-right: 10px;
+}
+
+
+main {
+	margin: 20px;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+h2{
+    text-align: left;
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+form{
+    text-align: center;
+}
+
+.descricao-de-area {
+    padding-bottom: 5px;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    font-weight: normal;
+    font-weight: bold;
+}
+
+.titulo {
+    padding: 5px ;
+    border: solid 2px #dcdee0;
+    border-radius: 5px;
+    font-size: 18px;
+    margin: 5px;
+    text-align:left;
+    width: 320px;
+}
+
+.descricao-pergunta {
+    padding: 5px ;
+    border: solid 2px #dcdee0;
+    border-radius: 5px;
+    font-size: 18px;
+    width: 1160px;
+    margin: 5px;
+    text-align: left;
+}
+
+.botao-cadastro {
+    background-color: #e37d18;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    align-self: center;
+}
+
+.botao-cadastro:hover {
+    background-color: #b16315;
+    cursor: pointer;
+}
+
+.radio {
+    display: inline-block;
+    padding: 5px;
+    border: solid 2px #dcdee0;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0 5px;
+}
+
+.radio::marker {
+    background-color: blue;
+    color: blue;
+}
+
+
+.tag {
+    display: inline-block;
+    padding: 5px;
+    border: solid 2px #dcdee0;
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0 5px;
+    padding: 0 3px;
+    height: 30px;
+    line-height: 20px;
+}
+
+.container-button{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: center;
+}
+
+.back-button{
+    border:none;
+    border-radius: 3px;
+    padding: 8px 16px;
+    background-color:white;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+    cursor: pointer;
+}
+
+.back-button:hover{
+    opacity: 0.7;
+}
+
+.back-button a{
+    color: black;
+    text-decoration: none;
+}
+
+.obs{
+	padding-left: 10px;
+}
