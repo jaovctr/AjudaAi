@@ -15,6 +15,22 @@ def busca_demanda_id(id):
             return indice, demanda
 
 
+def busca_usuario_id(id):
+    return [u for u in usuarios if u['codUsuario'] == id][0]
+
+
+def busca_topico_id(id):
+    return [t for t in topicos_forum if t['id'] == id][0]
+    
+
+def listagem_topicos_forum():
+    aux = topicos_forum.copy()
+    for t in aux:
+        t['usuario'] = busca_usuario_id(t['codUsuario'])
+
+    return aux
+    
+    
 def listagem_demandas(id_usuario=0):
     if id_usuario:
         return [d for d in demandas if d['codUsuario'] == id_usuario]
@@ -30,6 +46,9 @@ def apaga_demanda(id):
 
 def notifica_usuarios(nome_tags: list, tipo: str):
     usuarios_envio = set()
+
+    if not nome_tags:
+        return
 
     for t in nome_tags:
         for u in usuarios:
@@ -48,8 +67,50 @@ def notifica_usuarios(nome_tags: list, tipo: str):
     notifica.enviar_emails(assunto, usuarios_envio, corpo)
 
 
+def salvar_comentario_topico(id_topico, comentario, codUsuario):
+    global comentarios
+    comentarios.append({
+        'id': prox_id_comentario(),
+        'texto': comentario,
+        'codTopico': id_topico,
+        'codUsuario': codUsuario
+    })
+
+
+def info_topico(id_topico):
+    topico = busca_topico_id(id_topico)
+    topico['usuario'] = busca_usuario_id(topico['codUsuario'])
+    topico['comentarios'] = [c for c in comentarios if c['codTopico'] == topico['id']]
+
+
+    # print(topico['comentarios'])
+
+
+    for c in topico['comentarios']:
+        c['usuario'] = busca_usuario_id(c['codUsuario'])
+
+    return topico
+
+
+def salvar_topico_forum(titulo, descricao, codUsuario):
+    global topicos_forum
+
+    tags = ['#' + tag.strip() for tag in descricao.split('#')[1:]]
+    descricao = descricao.split('#')[0]
+
+    notifica_usuarios(tags, 'novo topico')
+    topicos_forum.append({
+        'id': prox_id_topico(),
+        'titulo': titulo,
+        'texto': descricao.strip(),
+        'tags': tags,
+        'codUsuario': codUsuario
+    })
+
+
 def salvar_demanda(titulo, tipo, descricao, tags, codDemanda=0, codUsuario=0):
     global demandas
+
     lista = [busca_tag_id(int(id)) for id in tags]
     tags = '; '.join(lista)
 

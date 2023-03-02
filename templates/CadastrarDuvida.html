@@ -2,9 +2,13 @@
 <html>
 <head>
 	<title>Cadastrar dúvida</title>
+
+	<link rel="stylesheet" type="text/css" href="../static/styleCadastrarDuvida.css">
+=======
 	<link rel="stylesheet" href="../static/styleCadastrarDuvida.css">
 	<link rel = "shortcut icon" href = "../static/img/favicon_transparent_32x32.ico">
 	<link rel = "shortcut icon" href = "../static/img/remove bg logo.png">
+
 </head>
 <body>
 	<header>
@@ -19,42 +23,26 @@
 		</header>
 	</header>
 	<main>
-		<h2>Formule sua dúvida</h2>
+		<h2>Formule sua Dúvida</h2>
 
-        <form method="POST" action="#" >
-            <label class="descricao-de-area">Informe o título da pergunta: </label>
+        <form method="POST" action="{{ url_for('criar_topico') }}" enctype="multipart/form-data">
+            <label class="descricao-de-area">Informe o título da pergunta</label>
             <input type="text" name="titulo" id="titulo" placeholder="Título" required class="titulo">
             <br><br>
 
-            <label class="descricao-de-area">Selecione até quatro tags: </label>
-          
-                <select multiple name="select_tag{{ i }}" class="tag" style="height: 100px;">
-                    <option value="">programacao</option>
-                    <option value="">javaScript</option>
-					<option value="">css</option>
-					<option value="">python</option>
-					<option value="">saude</option>
-					<option value="">historia</option>
-					<option value="">exatas</option>
-					<option value="">linguistica</option>
-                    <option value="{{ tag['id'] }}">{{ tag['nome'] }}</option>
-               
-                </select multiple><br>
-           
-            <br><br>
-            <label class="descricao-de-area">Descrição da pergunta: </label>
+            <label class="descricao-de-area">Descrição da pergunta</label>
             <!-- <form method="get" action="./template/index.html" enctype="multipart/form-data">-->
-            <textarea name="descricao-pergunta" id="descricao-pergunta" placeholder="Digite sua mensagem"  rows="5" cols="30" maxlength="500" class="descricao-pergunta"></textarea>
+            <textarea name="descricao-pergunta" id="descricao-pergunta" placeholder="Exemplo de descrição... #tag1 #tag2"  rows="5" cols="47" maxlength="500" class="descricao-pergunta"></textarea>
             <br><br>
             
             <input type="submit" value="Cadastrar" class="botao-cadastro">
-			<label class="obs">Caso não esteja logad@, <a href="https://AjudaAi.com/cadastrar-usuario">clique aqui</a></label>
+			<label class="obs">Caso não esteja logad@, <a href="">clique aqui</a></label>
 
         </form>
-		
 	</main>
+
 	<footer>
-		<p><div class="container-button"><button class="back-button"><a href="{{ url_for('inserirAqui') }}">Voltar</a></button></div></p>
+		<p><div class="container-button"><button class="back-button"><a href="{{ url_for('forum') }}">Voltar</a></button></div></p>
 	</footer>
 </body>
 </html>

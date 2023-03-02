@@ -26,6 +26,16 @@
 	<main>
 		<article>
 
+			<h2>{{ topico['titulo'] }}
+				<nav id="allTags">
+					{% for tag in topico['tags'] %}
+						<a href="">{{ tag }}</a>
+					{% endfor %}
+				</nav>
+			</h2>
+			<p>{{ topico['texto'] }}</p>
+=======
+
 			<div class="question-header">
 				<a href="https://ajudaAi.com.br/perfil-marcelo-carvalho">
 					<img src="../static/img/iconboy.png" alt="Foto de perfil do autor" class="avatar">
@@ -40,11 +50,40 @@
 				<p>Olá pessoal, estou tendo dificuldades em resolver um problema no meu código. Eu estou tentando criar uma função em JavaScript que some dois números, mas não está funcionando. Já tentei várias coisas, mas ainda não consegui encontrar o erro. Alguém pode me ajudar?</p>
 			</div>
 
+
 		</article>
 		<section>
 			<h3>Respostas</h3>
 			<ul>
+				{% for comentario in topico['comentarios'] %}
+					<li>
+						<div class="answer-header">
+							<a href="">
+								<img src="../static/img/icon2.png" alt="Foto de perfil do autor" class="avatar">
+								<h4> {{ comentario['usuario']['nome'] }} </h4>
+							</a>
+							<p> {{ comentario['texto'] }} </p>
+						</div>
+						
+	                    <div class="answer-feedback">
+							<button class="like-button"><img src="../static/img/like.png"></button>
+							<button class="dislike-button"><img src="../static/img/deslike.png"></button>
+						</div>
+					</li>
+				{% endfor %}
+
 				<li>
+
+					<div class="your-answer">
+						<form method="POST" action="{{ url_for('comentar') }}" enctype="multipart/form-data">
+							<input name="id_topico" type="text" style="display: none;" value="{{ topico['id'] }}">
+							<label class="nome-caixa-resposta">Comentar: </label>
+							<textarea name="comentario" rows="10" style="width: 1160px" placeholder="Digite seu comentário..." class="caixa-reposta"></textarea>
+							<br><br>
+							<input type="submit" class="enviar-button" value="Enviar">
+							<label class="obs">Caso não esteja logad@, <a href="">clique aqui</a></label>
+						</form>
+=======
 					<div class="answer-header">
 						<a href="https://AjudaAi.com/perfil-joao-silva">
 							<img src="../static/img/iconboy.png" alt="Foto de perfil do autor" class="avatar">
@@ -84,6 +123,7 @@
                     <div class="answer-feedback">
 						<button class="like-button"><img src="../static/img/like.png"></button>
 						<button class="dislike-button"><img src="../static/img/deslike.png"></button>
+
 					</div>
 				</li>
 				<li>
@@ -101,7 +141,7 @@
 		</section>
 	</main>
 	<footer>
-		<p><div class="container-button"><button class="back-button"><a href="{{ url_for('inserirAqui') }}">Voltar</a></button></div></p>
+		<p><div class="container-button"><button class="back-button"><a href="{{ url_for('forum') }}">Voltar</a></button></div></p>
 	</footer>
 </body>
 </html>
