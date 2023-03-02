@@ -36,12 +36,12 @@
 				{% for topico in topicos %}
 					<li>
 						<div class="question-header">
-							<a href="">
+							<a href="{{ url_for('visualizar_topico', id_topico=topico['id']) }}">
 								<img src="../static/img/icon.png" alt="Foto de perfil do autor" class="avatar">
 								<h4>{{ topico['usuario']['nome'] }}</h4>
 							</a>
 
-							<a href="" class="link-duvida">
+							<a href="{{ url_for('visualizar_topico', id_topico=topico['id']) }}" class="link-duvida">
 								<h3>{{ topico['titulo'] }}</h3>
 									<nav id="allTags">
 										{% for tag in topico['tags'] %}

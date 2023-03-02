@@ -53,6 +53,17 @@ def criar_topico():
 	return redirect(url_for('forum'))
 
 
+@aplicacao.route('/comentar', methods=['GET', 'POST'])
+def comentar():
+	id_topico = request.form['id_topico']
+	comentario = request.form['comentario']
+
+	# print(id_topico, comentario)
+
+	facade.salvar_comentario_topico(id_topico, comentario, usuario_padrao)
+	return redirect(url_for('forum'))
+
+
 @aplicacao.route('/forum')
 def forum():
  	return render_template('Forum.html', topicos=facade.listagem_topicos_forum())
@@ -82,6 +93,11 @@ def retorna_lista():
         return redirect(url_for('lista_demandas'))
     else:
         return redirect(url_for('minhas_demandas'))
+
+
+@aplicacao.route('/visualizar_topico/<int:id_topico>')
+def visualizar_topico(id_topico):
+    return render_template('topicoForum.html', topico=facade.info_topico(id_topico))
 
 
 @aplicacao.route('/visualizar_demanda/<int:cod>')

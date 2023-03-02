@@ -35,14 +35,14 @@
 		<section>
 			<h3>Respostas</h3>
 			<ul>
-				{% for comentario in comentarios %}
+				{% for comentario in topico['comentarios'] %}
 					<li>
 						<div class="answer-header">
 							<a href="">
 								<img src="../static/img/icon2.png" alt="Foto de perfil do autor" class="avatar">
-								<h4>comentario['usuario']['nome']</h4>
+								<h4> {{ comentario['usuario']['nome'] }} </h4>
 							</a>
-							<p>comentario['texto']</p>	
+							<p> {{ comentario['texto'] }} </p>
 						</div>
 						
 	                    <div class="answer-feedback">
@@ -51,6 +51,19 @@
 						</div>
 					</li>
 				{% endfor %}
+
+				<li>
+					<div class="your-answer">
+						<form method="POST" action="{{ url_for('comentar') }}" enctype="multipart/form-data">
+							<input name="id_topico" type="text" style="display: none;" value="{{ topico['id'] }}">
+							<label class="nome-caixa-resposta">Comentar: </label>
+							<textarea name="comentario" rows="10" style="width: 1160px" placeholder="Digite seu comentário..." class="caixa-reposta"></textarea>
+							<br><br>
+							<input type="submit" class="enviar-button" value="Enviar">
+							<label class="obs">Caso não esteja logad@, <a href="">clique aqui</a></label>
+						</form>
+					</div>
+				</li>
 			</ul>
 		</section>
 	</main>

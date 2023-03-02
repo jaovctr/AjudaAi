@@ -64,7 +64,8 @@ usuarios = [
         'email': 'jaovctr@ufpi.edu.br',
         'tags': [
             'COMPUTAÇÃO - Banco de Dados',
-            'LETRAS INGLÊS - Confecção de Abstract'
+            'LETRAS INGLÊS - Confecção de Abstract',
+            '#programacao'
         ]
     },
     {
@@ -75,7 +76,8 @@ usuarios = [
             'ESTATÍSTICA - Análise Combinatória',
             'FÍSICA - Leis de Newton',
             'LETRAS INGLÊS - Confecção de Abstract',
-            'LETRAS INGLÊS - Tempos Verbais'
+            'LETRAS INGLÊS - Tempos Verbais',
+            '#programacao'
         ]
     },
     {
@@ -85,7 +87,8 @@ usuarios = [
         'tags': [
             'ESTATÍSTICA - Análise Combinatória',
             'LETRAS INGLÊS - Confecção de Abstract',
-            'LETRAS INGLÊS - Tempos Verbais'
+            'LETRAS INGLÊS - Tempos Verbais',
+            '#programacao'
         ]
     },
     {
@@ -96,6 +99,7 @@ usuarios = [
             'COMPUTAÇÃO - Banco de Dados',
             'FÍSICA - Leis de Newton',
             'LETRAS INGLÊS - Confecção de Abstract',
+            '#programacao'
         ]
     },
     {
@@ -148,7 +152,6 @@ topicos_forum = [
         'codUsuario': 8
     }
 ]
-
 
 comentarios = [
     {
