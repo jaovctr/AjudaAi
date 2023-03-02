@@ -2,12 +2,16 @@
 <html>
 <head>
 	<title>Fórum</title>
+
+	<link rel="stylesheet" type="text/css" href="../static/styleForum.css">
+=======
 	<link rel="stylesheet" href="../static/styleForum.css">
 	<link rel = "shortcut icon" href = "../static/img/favicon_transparent_32x32.ico">
 	<link rel = "shortcut icon" href = "../static/img/remove bg logo.png">
 	<link rel = "shortcut icon" href = "../static/img/icon.png">
 	<link rel = "shortcut icon" href = "../static/img/icon2.png">
 	<link rel = "shortcut icon" href = "../static/img/iconboy.png">
+
 </head>
 <body>
 	<header>
@@ -27,17 +31,26 @@
 				<form class="search-form">
 					<input type="text" placeholder="Pesquisar por tags...">
 					<button class="filter-button">Filtrar</button>
-
-					<a class ="modulo-ask-question" href="http://127.0.0.1:5501/CadastrarDuvida.html">
-						<button class="ask-question-button">Faça uma pergunta</button>
-					</a> 
 				</form>
-				
+				<a class ="modulo-ask-question" href="{{ url_for('novo_topico') }}">
+					<button class="ask-question-button">Faça uma pergunta</button>
+				</a>
 			</h2>
+			<!--
 			<p>----Espaço para aparecer as tags pesquisadas------</p>
+			-->
 		</article>
 		<section>
 			<ul>
+
+				{% for topico in topicos %}
+					<li>
+						<div class="question-header">
+							<a href="{{ url_for('visualizar_topico', id_topico=topico['id']) }}">
+								<img src="../static/img/icon.png" alt="Foto de perfil do autor" class="avatar">
+								<h4>{{ topico['usuario']['nome'] }}</h4>
+							</a>
+=======
 				<li>
 					<div class="question-header">
 						<a href="https://ajudaAi.com.br/perfil-marcelo-carvalho">
@@ -89,12 +102,24 @@
 						</a>	
 					</div>
 
-				</li>
+
+							<a href="{{ url_for('visualizar_topico', id_topico=topico['id']) }}" class="link-duvida">
+								<h3>{{ topico['titulo'] }}</h3>
+									<nav id="allTags">
+										{% for tag in topico['tags'] %}
+											<a href="">{{ tag }}</a>
+										{% endfor %}
+									</nav>
+								<p>{{ topico['texto'] }}</p>	
+							</a>
+						</div>
+					</li>
+				{% endfor %}
 			</ul>
 		</section>
 	</main>
 	<footer>
-		<p><div class="container-button"><button class="back-button"><a href="{{ url_for('inserirAqui') }}">Voltar</a></button></div></p>
+		<p><div class="container-button"><button class="back-button"><a href="{{ url_for('index') }}">Voltar</a></button></div></p>
 	</footer>
 </body>
 </html>

@@ -21,7 +21,7 @@ def nova_demanda():
     return render_template('nova_demanda.html', tags=facade.listagem_tags())
 
 
-@aplicacao.route('/criar', methods=['GET', 'POST'])
+@aplicacao.route('/criar_demanda', methods=['GET', 'POST'])
 def criar_demanda():
     tags = list()
     titulo = request.form['titulo']
@@ -36,6 +36,37 @@ def criar_demanda():
     facade.salvar_demanda(titulo, tipo, descricao, tags, codUsuario=usuario_padrao)
     flash('Demanda criada com sucesso!', category='success')
     return redirect(url_for('index'))
+
+
+@aplicacao.route('/novo_topico')
+def novo_topico():
+	#     if 'usuario_logado' not in session or session['usuario_logado'] is None:
+	#         return login_usuario('nova_demanda')
+    return render_template('CadastrarDuvida.html')
+
+
+@aplicacao.route('/criar_topico', methods=['GET', 'POST'])
+def criar_topico():
+	titulo = request.form['titulo']
+	descricao = request.form['descricao-pergunta']
+	facade.salvar_topico_forum(titulo, descricao, usuario_padrao)
+	return redirect(url_for('forum'))
+
+
+@aplicacao.route('/comentar', methods=['GET', 'POST'])
+def comentar():
+	id_topico = request.form['id_topico']
+	comentario = request.form['comentario']
+
+	# print(id_topico, comentario)
+
+	facade.salvar_comentario_topico(id_topico, comentario, usuario_padrao)
+	return redirect(url_for('forum'))
+
+
+@aplicacao.route('/forum')
+def forum():
+ 	return render_template('Forum.html', topicos=facade.listagem_topicos_forum())
 
 
 @aplicacao.route('/lista_demandas')
@@ -62,6 +93,11 @@ def retorna_lista():
         return redirect(url_for('lista_demandas'))
     else:
         return redirect(url_for('minhas_demandas'))
+
+
+@aplicacao.route('/visualizar_topico/<int:id_topico>')
+def visualizar_topico(id_topico):
+    return render_template('topicoForum.html', topico=facade.info_topico(id_topico))
 
 
 @aplicacao.route('/visualizar_demanda/<int:cod>')
