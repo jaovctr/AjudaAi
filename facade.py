@@ -43,6 +43,9 @@ def apaga_demanda(id):
 def notifica_usuarios(nome_tags: list, tipo: str):
     usuarios_envio = set()
 
+    if not nome_tags:
+        return
+
     for t in nome_tags:
         for u in usuarios:
             if t in u['tags']:
@@ -60,18 +63,25 @@ def notifica_usuarios(nome_tags: list, tipo: str):
     notifica.enviar_emails(assunto, usuarios_envio, corpo)
 
 
-def salvar_topico_forum(titulo, descricao, usuario_padrao):
+def salvar_topico_forum(titulo, descricao, codUsuario):
     global topicos_forum
 
-    
+    tags = ['#' + tag.strip() for tag in descricao.split('#')[1:]]
+    descricao = descricao.split('#')[0]
 
-
-
-
+    notifica_usuarios(tags, 'novo topico')
+    topicos_forum.append({
+        'id': prox_id_topico(),
+        'titulo': titulo,
+        'texto': descricao.strip(),
+        'tags': tags,
+        'codUsuario': codUsuario
+    })
 
 
 def salvar_demanda(titulo, tipo, descricao, tags, codDemanda=0, codUsuario=0):
     global demandas
+
     lista = [busca_tag_id(int(id)) for id in tags]
     tags = '; '.join(lista)
 

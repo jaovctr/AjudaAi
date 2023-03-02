@@ -22,11 +22,10 @@
 				<form class="search-form">
 					<input type="text" placeholder="Pesquisar por tags...">
 					<button class="filter-button">Filtrar</button>
-
-					<a class ="modulo-ask-question" href="{{ url_for(novo_topico) }}">
-						<button class="ask-question-button">Faça uma pergunta</button>
-					</a> 
 				</form>
+				<a class ="modulo-ask-question" href="{{ url_for('novo_topico') }}">
+					<button class="ask-question-button">Faça uma pergunta</button>
+				</a>
 			</h2>
 			<!--
 			<p>----Espaço para aparecer as tags pesquisadas------</p>
@@ -37,12 +36,12 @@
 				{% for topico in topicos %}
 					<li>
 						<div class="question-header">
-							<a href="https://ajudaAi.com.br/perfil-marcelo-carvalho">
+							<a href="">
 								<img src="../static/img/icon.png" alt="Foto de perfil do autor" class="avatar">
 								<h4>{{ topico['usuario']['nome'] }}</h4>
 							</a>
 
-							<a href="http://127.0.0.1:5501/topicoForum.html" class="link-duvida">
+							<a href="" class="link-duvida">
 								<h3>{{ topico['titulo'] }}</h3>
 									<nav id="allTags">
 										{% for tag in topico['tags'] %}

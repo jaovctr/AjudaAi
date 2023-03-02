@@ -54,7 +54,8 @@ usuarios = [
         'tags': [
             'COMPUTAÇÃO - Programação Estruturada',
             'COMPUTAÇÃO - Banco de Dados',
-            'LETRAS INGLÊS - Confecção de Abstract'
+            'LETRAS INGLÊS - Confecção de Abstract',
+            '#programacao'
         ]
     },
     {
@@ -126,14 +127,14 @@ topicos_forum = [
                 + 'mas não está funcionando. Já tentei várias coisas, mas ainda não consegui'
                 + 'encontrar o erro. Alguém pode me ajudar?',
         'tags': ['#programacao', '#javaScript', '#frontend'],
-        'codUsuario': 6,
+        'codUsuario': 6
     },
     {
         'id': 2,
         'titulo': 'Ajuda em CSS',
         'texto': 'Como fazer um dropdown em CSS?',
         'tags': ['#programacao', '#css', '#frontend'],
-        'codUsuario': 7,
+        'codUsuario': 7
     },
     {
         'id': 3,
@@ -144,7 +145,7 @@ topicos_forum = [
                 + 'usando o algoritmo de Dijkstra. Além disso, a função deve ser capaz de lidar'
                 + 'com casos em que u e v não são conectados em G.',
         'tags': ['#programacao', '#python', '#estruturadedados'],
-        'codUsuario': 8,
+        'codUsuario': 8
     }
 ]
 

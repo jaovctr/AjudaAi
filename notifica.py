@@ -68,5 +68,3 @@ def enviar_emails(assunto, addr, corpo):
         enviar_email_para(assunto, to, corpo, server_email)
 
     server_email.close()
-
-enviar_emails('Ola', ['caiofslv@gmail.com'], 'Teste')
