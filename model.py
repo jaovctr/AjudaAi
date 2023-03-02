@@ -150,9 +150,37 @@ topicos_forum = [
 ]
 
 
+comentarios = [
+    {
+        'id': 1,
+        'texto': 'Tente verificar se você está passando os argumentos corretamente'
+                + 'para a função e se está retornando o valor correto.',
+        'codTopico': 1,
+        'codUsuario': 1
+    },
+    {
+        'id': 2,
+        'texto': 'Verifique se você está declarando a função corretamente'
+                + 'e se está usando o operador de adição (+) para somar os números.',
+        'codTopico': 1,
+        'codUsuario': 5
+    },
+    {
+        'id': 3,
+        'texto': 'Se possível, compartilhe seu código para que possamos analisar melhor e te ajudar.',
+        'codTopico': 1,
+        'codUsuario': 2
+    }
+]
+
+
 def prox_id_demanda():
     return demandas[-1]['codDemanda'] + 1
 
 
 def prox_id_topico():
     return topicos_forum[-1]['id'] + 1
+
+
+def prox_id_comentario():
+    return comentarios[-1]['id'] + 1

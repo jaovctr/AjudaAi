@@ -6,6 +6,7 @@ body {
 	background-color: #1a1a2e;
 	color: #000;
 }
+
 header, footer {
 	background-color: rgb(15, 15, 103);
 	color: #fff;
@@ -46,6 +47,7 @@ main {
 	border-radius: 10px;
 	box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
+
 article, section {
 	margin-bottom: 20px;
 }
@@ -55,21 +57,25 @@ h2 {
 	margin-bottom: 10px;
 	color: #000;
 }
+
 h3 {
 	font-size: 20px;
 	margin-bottom: 10px;
 	color: #000;
 }
+
 h4 {
 	font-size: 16px;
 	margin-bottom: 10px;
 	color: #000;
 }
+
 ul {
 	list-style: none;
 	padding: 0;
 	margin: 0;
 }
+
 li {
 	padding: 10px;
 	border: 1px solid #ccc;
@@ -113,6 +119,7 @@ li {
 
 .back-button a{
 	color: black;
+	text-decoration: none;
 }
 
 .like-button img, .dislike-button img {
