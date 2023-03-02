@@ -17,10 +17,11 @@
     <link rel="stylesheet" href="../static/reset_demandas.css">
 </head>
 
+
 <body>
     <main class="formulario">
         <header class="d-flex flex-wrap justify-content-center justify-content-md-between">
-            <h1 class="col-md-8 text-end titulo-pagina">Demandas em Geral</h1>
+            <h1 class="col-md-8 text-end titulo-pagina">Buscar Demanda</h1>
             <a class="col-md-1 text-center" href="{{ url_for('index') }}"><svg class="svg-inline--fa fa-xmark" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"></path></svg><!-- <i class="fa-solid fa-xmark"></i> Font Awesome fontawesome.com --></a>
         </header>
         <br>
@@ -32,8 +33,7 @@
                         <th>Título</th>
                         <th>Tags</th>
                         <th>Tipo</th>
-                        <th>Descrição</th>
-                        <th>Status</th>
+                
                     </tr>
                 </thread>
                 <tbody>
@@ -42,26 +42,21 @@
                                 <td>{{ demanda['titulo'] }}</td>
                                 <td>{{ demanda['tags'] }}</td>
                                 <td>{{ demanda['tipo'] }}</td>
-                                <td>{{ demanda['descricao'] }}</td>
-                                <td>{{ demanda['status'] }}</td>
-                                <td>
+                            
+                               <!-- <td>
                                     <a class="visualizar_demanda" href="{{ url_for('visualizar_demanda', cod=demanda['codDemanda']) }}">
                                         <img src="../static/img/visualizar.png">
                                     </a>
-                                </td>
-                                <!--<td>
-                                    <a class="visualizar_demanda" href="{{ url_for('apagar_demanda', cod=demanda['codDemanda'], pagina=1) }}">
-                                        <img src="../static/img/lixeira.png">
-                                    </a>
-                                </td>-->
+                                </td> -->      
+                           
                             </tr>
                     {% endfor %}
                 </tbody>
             </table>
         </div>
-
+    
         <section>
-            <button class="btn btn-primary mx-auto" href="filtro_busca.html">Buscar por Filtro</button>
+            <button class="btn btn-primary mx-auto" href="filtro_busca.html">Procurar</button>
         </section>
     </main>
 
@@ -70,6 +65,14 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         
 </body>
+
+
+
+
+
+
+
+
 
 
 

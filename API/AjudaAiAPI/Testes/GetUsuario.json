@@ -1,0 +1,25 @@
+	
+Success
+
+Media type
+
+text/json
+Controls Accept header.
+Example Value
+Schema
+[
+  {
+    "codUsuario": 1,
+    "matricula": 1235430,
+    "email": "joao@email.com",
+    "conhecimento": "computacao",
+    "avaliacao": 4,
+    "nome": "joao jose",
+    "senha": "2342f43f",
+    "usuario1": "jjose",
+    "comentarios": [],
+    "demandumAjudanteNavigations": [],
+    "demandumSolicitanteNavigations": [],
+    "topicos": []
+  }
+]

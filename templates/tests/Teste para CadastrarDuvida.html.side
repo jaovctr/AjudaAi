@@ -1,0 +1,148 @@
+{
+  "id": "3964be0f-0a09-4612-b6d6-5752d88e0f29",
+  "version": "2.0",
+  "name": "Teste para Cadastrarduvida.html",
+  "url": "http://127.0.0.1:5500",
+  "tests": [{
+    "id": "75875c50-b13f-4a0a-878a-e27a14f9a08c",
+    "name": "Preencher informações",
+    "commands": [{
+      "id": "e71752b9-7ad3-4cf6-81b2-12624ee8fa07",
+      "comment": "",
+      "command": "open",
+      "target": "/templates/CadastrarDuvida.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c430af72-49ef-4026-9a76-4e1e10d0aab4",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1032",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "64cad50b-74fd-4e8e-91f5-c9d97f9de965",
+      "comment": "",
+      "command": "click",
+      "target": "id=titulo",
+      "targets": [
+        ["id=titulo", "id"],
+        ["name=titulo", "name"],
+        ["css=#titulo", "css:finder"],
+        ["xpath=//input[@id='titulo']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ed083c7a-2910-4732-a2da-a1471480aee0",
+      "comment": "",
+      "command": "type",
+      "target": "id=titulo",
+      "targets": [
+        ["id=titulo", "id"],
+        ["name=titulo", "name"],
+        ["css=#titulo", "css:finder"],
+        ["xpath=//input[@id='titulo']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Pandas em Python"
+    }, {
+      "id": "ca1996cf-0fae-440f-bc70-bbb100510ec6",
+      "comment": "",
+      "command": "click",
+      "target": "id=titulo",
+      "targets": [
+        ["id=titulo", "id"],
+        ["name=titulo", "name"],
+        ["css=#titulo", "css:finder"],
+        ["xpath=//input[@id='titulo']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f721b7a7-5490-4568-a8fa-a99cc8a1c63e",
+      "comment": "",
+      "command": "type",
+      "target": "id=titulo",
+      "targets": [
+        ["id=titulo", "id"],
+        ["name=titulo", "name"],
+        ["css=#titulo", "css:finder"],
+        ["xpath=//input[@id='titulo']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Pandas no Python"
+    }, {
+      "id": "5764df78-3dd6-4c80-b07e-24800ed47aee",
+      "comment": "",
+      "command": "addSelection",
+      "target": "name=select_tag{{ i }}",
+      "targets": [
+        ["name=select_tag{{ i }}", "name"],
+        ["css=.tag", "css:finder"],
+        ["xpath=//select[@name='select_tag{{ i }}']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "label=programacao"
+    }, {
+      "id": "adb22a29-7c9f-4e8b-8231-eb0073801929",
+      "comment": "",
+      "command": "addSelection",
+      "target": "name=select_tag{{ i }}",
+      "targets": [
+        ["name=select_tag{{ i }}", "name"],
+        ["css=.tag", "css:finder"],
+        ["xpath=//select[@name='select_tag{{ i }}']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "label=python"
+    }, {
+      "id": "07851394-205e-4ac9-b20c-8c3a03a105de",
+      "comment": "",
+      "command": "click",
+      "target": "id=descricao-pergunta",
+      "targets": [
+        ["id=descricao-pergunta", "id"],
+        ["name=descricao-pergunta", "name"],
+        ["css=#descricao-pergunta", "css:finder"],
+        ["xpath=//textarea[@id='descricao-pergunta']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "40fa2abb-32c6-4304-b132-4d34186656e7",
+      "comment": "",
+      "command": "type",
+      "target": "id=descricao-pergunta",
+      "targets": [
+        ["id=descricao-pergunta", "id"],
+        ["name=descricao-pergunta", "name"],
+        ["css=#descricao-pergunta", "css:finder"],
+        ["xpath=//textarea[@id='descricao-pergunta']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Como posso usar a biblioteca Pandas do Python para importar um grande conjunto de dados de um arquivo CSV e, em seguida, realizar operações de limpeza e transformação de dados, como a remoção de valores ausentes e a criação de novas colunas, antes de exportar o resultado final em um novo arquivo CSV?"
+    }, {
+      "id": "4533b553-96c5-4ce8-af6a-d44637b9178b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.botao-cadastro",
+      "targets": [
+        ["css=.botao-cadastro", "css:finder"],
+        ["xpath=//input[@value='Cadastrar']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "f0d06848-b071-4b50-bb2a-1039517ee222",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["75875c50-b13f-4a0a-878a-e27a14f9a08c"]
+  }],
+  "urls": ["http://127.0.0.1:5500/"],
+  "plugins": []
+}
