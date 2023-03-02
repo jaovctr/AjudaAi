@@ -16,7 +16,7 @@ def busca_demanda_id(id):
 
 
 def busca_usuario_id(id):
-    return [u for u in usuarios if u['id'] == id][0]
+    return [u for u in usuarios if u['codUsuario'] == id][0]
     
 
 def listagem_topicos_forum():
@@ -58,6 +58,16 @@ def notifica_usuarios(nome_tags: list, tipo: str):
                 + ' no fórum com um tema de seu interesse!'
 
     notifica.enviar_emails(assunto, usuarios_envio, corpo)
+
+
+def salvar_topico_forum(titulo, descricao, usuario_padrao):
+    global topicos_forum
+
+    
+
+
+
+
 
 
 def salvar_demanda(titulo, tipo, descricao, tags, codDemanda=0, codUsuario=0):

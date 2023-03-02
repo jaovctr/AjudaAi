@@ -151,3 +151,7 @@ topicos_forum = [
 
 def prox_id_demanda():
     return demandas[-1]['codDemanda'] + 1
+
+
+def prox_id_topico():
+    return topicos_forum[-1]['id'] + 1

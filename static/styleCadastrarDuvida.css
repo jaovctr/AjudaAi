@@ -6,6 +6,7 @@ body {
 	background-color: #1a1a2e;
 	color: #000;
 }
+
 header, footer {
 	background-color: rgb(15, 15, 103);
 	color: #fff;
@@ -72,7 +73,7 @@ form{
     border: solid 2px #dcdee0;
     border-radius: 5px;
     font-size: 18px;
-    width: 1160px;
+    /*width: 1160px;*/
     margin: 5px;
     text-align: left;
 }

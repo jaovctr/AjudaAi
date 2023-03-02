@@ -23,11 +23,10 @@
 					<input type="text" placeholder="Pesquisar por tags...">
 					<button class="filter-button">Filtrar</button>
 
-					<a class ="modulo-ask-question" href="http://127.0.0.1:5501/CadastrarDuvida.html">
+					<a class ="modulo-ask-question" href="{{ url_for(novo_topico) }}">
 						<button class="ask-question-button">Faça uma pergunta</button>
 					</a> 
 				</form>
-				
 			</h2>
 			<!--
 			<p>----Espaço para aparecer as tags pesquisadas------</p>
@@ -39,7 +38,7 @@
 					<li>
 						<div class="question-header">
 							<a href="https://ajudaAi.com.br/perfil-marcelo-carvalho">
-								<img src="../static/img/iconboy.png" alt="Foto de perfil do autor" class="avatar">
+								<img src="../static/img/icon.png" alt="Foto de perfil do autor" class="avatar">
 								<h4>{{ topico['usuario']['nome'] }}</h4>
 							</a>
 
