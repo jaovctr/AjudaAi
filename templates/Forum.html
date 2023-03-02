@@ -38,20 +38,20 @@
 				{% for topico in topicos %}
 					<li>
 						<div class="question-header">
-								<a href="https://ajudaAi.com.br/perfil-marcelo-carvalho">
-									<img src="../static/img/iconboy.png" alt="Foto de perfil do autor" class="avatar">
-									<h4>{{ topico['usuario']['nome'] }}</h4>
-								</a>
+							<a href="https://ajudaAi.com.br/perfil-marcelo-carvalho">
+								<img src="../static/img/iconboy.png" alt="Foto de perfil do autor" class="avatar">
+								<h4>{{ topico['usuario']['nome'] }}</h4>
+							</a>
 
-								<a href="http://127.0.0.1:5501/topicoForum.html" class="link-duvida">
-									<h3>{{ topico['titulo'] }}</h3>
-										<nav id="allTags">
-											{% for tag in topico['tags'] %}
-												<a href="#">{{ tag }}</a>
-											{% endfor %}
-										</nav>
-									<p>{{ topico['texto'] }}</p>	
-								</a>
+							<a href="http://127.0.0.1:5501/topicoForum.html" class="link-duvida">
+								<h3>{{ topico['titulo'] }}</h3>
+									<nav id="allTags">
+										{% for tag in topico['tags'] %}
+											<a href="">{{ tag }}</a>
+										{% endfor %}
+									</nav>
+								<p>{{ topico['texto'] }}</p>	
+							</a>
 						</div>
 					</li>
 				{% endfor %}

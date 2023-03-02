@@ -14,7 +14,7 @@ def busca_demanda_id(id):
         if demanda['codDemanda'] == id:
             return indice, demanda
 
-        
+
 def busca_usuario_id(id):
     return [u for u in usuarios if u['id'] == id][0]
     

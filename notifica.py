@@ -23,6 +23,7 @@ def enviar_email_para(assunto, addr, corpo_email, server_email):
     msg.add_header('Content-Type', 'text/html')
     msg_alternativa = MIMEMultipart('alternativa')
     msg.attach(msg_alternativa)
+    border_radius = 10
 
     msg_text = MIMEText(f'''
         <html lang='pt-br'>
@@ -30,15 +31,15 @@ def enviar_email_para(assunto, addr, corpo_email, server_email):
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <head>
             <body style="width:60%; margin: 0px 20px; margin:auto;">
-                <header style="background-color:rgb(15, 15, 103);
-                        border-radius:15px 15px 0px 0px; padding:3px 0px;">
+                <header style="background-color: #213951;
+                        border-radius:{border_radius}px {border_radius}px 0px 0px; padding:3px 0px;">
                     <h1><img src="cid:logo" width="100" height="100"
                     style="margin:auto; display:block;"></h1>
                 </header>
-                <p style="color:rgb(15, 15, 103); font-size:23px; margin-left: 15px;">
+                <p style="color: #213951; font-size:23px; margin-left: 15px;">
                     {corpo_email}
                 </p>
-                <footer style="background-color:rgb(15, 15, 103); border-radius: 0px 0px 15px 15px;
+                <footer style="background-color: #213951; border-radius: 0px 0px {border_radius}px {border_radius}px;
                         padding:12px 0px;">
                     <p style="color:rgba(212, 222, 245, 1); font-size:12px; width: 100%; text-align: center;
                         margin: auto; display:block;">
@@ -67,3 +68,5 @@ def enviar_emails(assunto, addr, corpo):
         enviar_email_para(assunto, to, corpo, server_email)
 
     server_email.close()
+
+enviar_emails('Ola', ['caiofslv@gmail.com'], 'Teste')

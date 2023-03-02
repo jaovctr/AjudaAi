@@ -51,7 +51,7 @@
 				</div>	
 			</section>
 
-			<section>
+			<section id="container-cards">
 				<div class="card">
 					<button class="opcao"> 
 						<a href="{{ url_for('nova_demanda') }}"><img src="../static/img/cadastro de demanda.png" width="300" height="300"></a>
@@ -75,11 +75,10 @@
 
 				<div class="card">
 					<button class="opcao">
-						<a href="{{ url_for('forum') }}"><img src="../static/img/forum.png" width="300" height="300"></a>
+						<a href="{{ url_for('forum') }}"><img src="../static/img/forum.png" id='icon-forum' width="300" height="300"></a>
 						<br><br><a href="{{ url_for('forum') }}"><strong>Fórum</strong></a>
 					</button>
 				</div>
-
 			</section>
 
 		</main>
