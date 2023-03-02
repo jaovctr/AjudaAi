@@ -1,7 +1,11 @@
+.titulo-pagina{
+    text-align: center;
+}
+
 .formulario {
     background-color: white;
-    padding: 20px 20px 20px 20px;
     text-align: center;
+    padding: 170px 20px 20px 20px;
     margin: auto;
     width: 420px;
     height: auto;
@@ -12,40 +16,78 @@
     border-radius: 50px;
 }
 
-.botao-aceitar {
-    padding: 1px;
-    /*background-color: #2ea400;*/
-    background-color: rgb(15, 15, 103);
+.titulo {
+    padding: 5px ;
+    border: solid 2px #dcdee0;
+    border-radius: 5px;
+    font-weight: normal;
+    margin: 5px;
+    text-align: left;
+    width: 320px;
+}
+
+.descricao-demanda {
+    padding: 5px ;
+    border: solid 2px #dcdee0;
+    border-radius: 5px;
+    font-weight: normal;
+    margin: 5px;
+    text-align: left;
+}
+
+.botao-cadastro {
+    background-color: #00A400;
     border-radius: 5px;
     padding: 10px 20px;
     font-size: large;
     font-weight: bold;
     color: white;
     font-family: "Montserrat", sans-serif;
+    align: center;
 }
 
-.botao-aceitar:hover {
-    background-color: #fff;
+.botao-cadastro:hover {
+    background-color: rgb(62, 131, 45);
     cursor: pointer;
-    color: rgb(15, 15, 103);
-    border-color: rgb(15, 15, 103);
 }
 
-.descricao-de-titulo, .descricao-de-pergunta {
-    padding-bottom: 1px;
+.radio {
+    display: inline-block;
+    padding: 5px;
+    border: solid 2px #dcdee0;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0 5px;
+}
+
+.radio::marker {
+    background-color: blue;
+    color: blue;
+}
+
+
+.tag {
+    display: inline-block;
+    padding: 5px;
+    border: solid 2px #dcdee0;
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0 5px;
+    padding: 0 3px;
+    height: 30px;
+    line-height: 20px;
+}
+
+.descricao-de-area {
+    padding-bottom: 5px;
     display: block;
     text-align: left;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: normal;
     font-weight: bold;
-}
-
-.descricao-de-texto {
-    padding-bottom: 1px;
-    display: block;
-    text-align: left;
-    font-size: 12px;
-    font-weight: normal;
 }
 
 .fa-xmark {
@@ -58,7 +100,7 @@
 @media (max-width: 768px) {
     .formulario {
         background-color: rgb(255, 255, 255);
-        text-align: center;
+        text-align: left;
         margin: auto;
         width: 386px;
         height: 490px;
@@ -74,7 +116,7 @@
         padding: 0 10px;
         border: solid 2px #dcdee0;
         border-radius: 5px;
-        font-size: 15px;
+        font-size: 14px;
         font-weight: normal;
         margin: 0 10px;
     }
@@ -83,7 +125,7 @@
 @media (max-width: 576px) {
     .formulario {
         background-color: rgb(255, 255, 255);
-        text-align: center;
+        text-align: left;
         margin: auto;
         width: 400px;
         height: 540px;

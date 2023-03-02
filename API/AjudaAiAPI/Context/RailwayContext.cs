@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
-using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
 namespace AjudaAiAPI.Context;
@@ -19,16 +17,22 @@ public partial class RailwayContext : DbContext
 
     public virtual DbSet<Atreladum> Atrelada { get; set; }
 
+    public virtual DbSet<Comentario> Comentarios { get; set; }
+
     public virtual DbSet<Demandum> Demanda { get; set; }
 
+    public virtual DbSet<Forum> Forums { get; set; }
+
     public virtual DbSet<Tag> Tags { get; set; }
+
+    public virtual DbSet<Topico> Topicos { get; set; }
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
     public static string StrConexao()
     {
         var builder = WebApplication.CreateBuilder();
-        var strCon = 
+        var strCon =
          builder.Configuration.GetConnectionString("Railway");
         return strCon.ToString();
     }
@@ -41,6 +45,8 @@ public partial class RailwayContext : DbContext
         modelBuilder.Entity<Atreladum>(entity =>
         {
             entity.HasKey(e => new { e.CodTag, e.CodDemanda }).HasName("PRIMARY");
+
+            entity.ToTable("atrelada");
 
             entity.HasIndex(e => e.CodDemanda, "codDemanda_UNIQUE").IsUnique();
 
@@ -65,9 +71,45 @@ public partial class RailwayContext : DbContext
                 .HasConstraintName("fk_Atrelada_Tags1");
         });
 
+        modelBuilder.Entity<Comentario>(entity =>
+        {
+            entity.HasKey(e => new { e.IdComentario, e.CodUsuario, e.IdTopicos }).HasName("PRIMARY");
+
+            entity.ToTable("comentario");
+
+            entity.HasIndex(e => e.CodUsuario, "fk_Comentario_codUsuario");
+
+            entity.HasIndex(e => e.IdTopicos, "fk_Topicos_idTopicos");
+
+            entity.HasIndex(e => e.IdComentario, "idComentario_UNIQUE").IsUnique();
+
+            entity.Property(e => e.IdComentario).HasColumnName("idComentario");
+            entity.Property(e => e.CodUsuario).HasColumnName("codUsuario");
+            entity.Property(e => e.IdTopicos).HasColumnName("idTopicos");
+            entity.Property(e => e.DataComentario)
+                .HasColumnType("date")
+                .HasColumnName("data_comentario");
+            entity.Property(e => e.Mensagem)
+                .HasColumnType("text")
+                .HasColumnName("mensagem");
+
+            entity.HasOne(d => d.CodUsuarioNavigation).WithMany(p => p.Comentarios)
+                .HasForeignKey(d => d.CodUsuario)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_Comentario_codUsuario");
+
+            entity.HasOne(d => d.IdTopicosNavigation).WithMany(p => p.Comentarios)
+                .HasPrincipalKey(p => p.IdTopicos)
+                .HasForeignKey(d => d.IdTopicos)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_Topicos_idTopicos");
+        });
+
         modelBuilder.Entity<Demandum>(entity =>
         {
             entity.HasKey(e => new { e.CodDemanda, e.Solicitante, e.Ajudante }).HasName("PRIMARY");
+
+            entity.ToTable("demanda");
 
             entity.HasIndex(e => e.CodDemanda, "codDemanda_UNIQUE").IsUnique();
 
@@ -96,9 +138,22 @@ public partial class RailwayContext : DbContext
                 .HasConstraintName("fk_Demanda_Usuario");
         });
 
+        modelBuilder.Entity<Forum>(entity =>
+        {
+            entity.HasKey(e => e.IdForum).HasName("PRIMARY");
+
+            entity.ToTable("forum");
+
+            entity.HasIndex(e => e.IdForum, "idForum_UNIQUE").IsUnique();
+
+            entity.Property(e => e.IdForum).HasColumnName("idForum");
+        });
+
         modelBuilder.Entity<Tag>(entity =>
         {
             entity.HasKey(e => e.CodTag).HasName("PRIMARY");
+
+            entity.ToTable("tags");
 
             entity.HasIndex(e => e.CodTag, "codTags_UNIQUE").IsUnique();
 
@@ -106,11 +161,42 @@ public partial class RailwayContext : DbContext
             entity.Property(e => e.Nome).HasColumnType("tinytext");
         });
 
+        modelBuilder.Entity<Topico>(entity =>
+        {
+            entity.HasKey(e => new { e.IdTopicos, e.IdForum, e.CodUsuario }).HasName("PRIMARY");
+
+            entity.ToTable("topicos");
+
+            entity.HasIndex(e => e.IdForum, "fk_Forum_idForum");
+
+            entity.HasIndex(e => e.CodUsuario, "fk_Topicos_codUsuario");
+
+            entity.HasIndex(e => e.IdTopicos, "idTopicos_UNIQUE").IsUnique();
+
+            entity.Property(e => e.IdTopicos).HasColumnName("idTopicos");
+            entity.Property(e => e.IdForum).HasColumnName("idForum");
+            entity.Property(e => e.CodUsuario).HasColumnName("codUsuario");
+            entity.Property(e => e.DataTopico)
+                .HasColumnType("date")
+                .HasColumnName("data_topico");
+            entity.Property(e => e.Texto).HasColumnType("text");
+
+            entity.HasOne(d => d.CodUsuarioNavigation).WithMany(p => p.Topicos)
+                .HasForeignKey(d => d.CodUsuario)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_Topicos_codUsuario");
+
+            entity.HasOne(d => d.IdForumNavigation).WithMany(p => p.Topicos)
+                .HasForeignKey(d => d.IdForum)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_Forum_idForum");
+        });
+
         modelBuilder.Entity<Usuario>(entity =>
         {
             entity.HasKey(e => e.CodUsuario).HasName("PRIMARY");
 
-            entity.ToTable("Usuario");
+            entity.ToTable("usuario");
 
             entity.HasIndex(e => e.Matricula, "Matricula_UNIQUE").IsUnique();
 

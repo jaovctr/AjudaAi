@@ -1,6 +1,6 @@
 .formulario {
     background-color: white;
-    padding: 20px 20px 20px 20px;
+    padding: 80px 20px 20px 20px;
     text-align: center;
     margin: auto;
     width: 420px;
@@ -14,8 +14,7 @@
 
 .botao-aceitar {
     padding: 1px;
-    /*background-color: #2ea400;*/
-    background-color: rgb(15, 15, 103);
+    background-color: #2ea400;
     border-radius: 5px;
     padding: 10px 20px;
     font-size: large;
@@ -25,10 +24,8 @@
 }
 
 .botao-aceitar:hover {
-    background-color: #fff;
+    background-color: #ffffff;
     cursor: pointer;
-    color: rgb(15, 15, 103);
-    border-color: rgb(15, 15, 103);
 }
 
 .descricao-de-titulo, .descricao-de-pergunta {
@@ -68,16 +65,6 @@
         transform: translate(-50%, -50%);
         border-radius: 20px;
     }
-
-    .radio {
-        display: inline-block;
-        padding: 0 10px;
-        border: solid 2px #dcdee0;
-        border-radius: 5px;
-        font-size: 15px;
-        font-weight: normal;
-        margin: 0 10px;
-    }
 }
 
 @media (max-width: 576px) {
@@ -92,15 +79,6 @@
         left: 50%;
         transform: translate(-50%, -50%);
         border-radius: 20px;
-    }
-
-    .radio {
-        display: inline;
-        padding: 5px;
-        border: solid 2px #dcdee0;
-        border-radius: 5px;
-        font-size: smaller;
-        margin: 3px;
     }
 
     .fa-xmark {

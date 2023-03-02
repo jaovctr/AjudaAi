@@ -1,0 +1,5 @@
+HOST=containers-us-west-120.railway.app
+DATABASE=railway
+PASSWORD=DVGBu9TbMDXbIddtkbiC
+PORT=6247
+USER=root
