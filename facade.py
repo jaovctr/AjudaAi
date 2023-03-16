@@ -29,8 +29,8 @@ def listagem_topicos_forum():
         t['usuario'] = busca_usuario_id(t['codUsuario'])
 
     return aux
-    
-    
+
+
 def listagem_demandas(id_usuario=0):
     if id_usuario:
         return [d for d in demandas if d['codUsuario'] == id_usuario]
@@ -134,6 +134,18 @@ def salvar_demanda(titulo, tipo, descricao, tags, codDemanda=0, codUsuario=0):
 
     return True
 
+
+def avaliacao_usuario(id):
+    def pos_usuario(id):
+        for i, usuario in enumerate(usuarios):
+            if usuario['codUsuario'] == id:
+                return i
+
+
+
+
+
+#def fecha_demanda()
 
 # def editar_demanda(codDemanda, titulo, tipo, descricao, tags):
 #     global demandas
