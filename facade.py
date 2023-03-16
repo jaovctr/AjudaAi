@@ -129,23 +129,47 @@ def salvar_demanda(titulo, tipo, descricao, tags, codDemanda=0, codUsuario=0):
             'tipo': tipo,
             'descricao': descricao,
             'status': 'Em aberto',
-            'codUsuario': codUsuario
+            'codUsuario': codUsuario,
+            'associados': [],
+            'ajudante': 0
         })
 
     return True
 
 
-def avaliacao_usuario(id):
-    def pos_usuario(id):
+def avaliacao_usuario(id_usuario, pontos):
+    def pos_usuario(id_usuario):
         for i, usuario in enumerate(usuarios):
-            if usuario['codUsuario'] == id:
+            if usuario['codUsuario'] == id_usuario:
                 return i
 
+    usuario = usuarios[pos_usuario(id)]
+    usuario['avaliacao'] = (usuario['avaliacao'] + pontos) / 2
+
+
+def fecha_demanda(id_demanda):
+    pos = busca_demanda_id(id)[0]
+    demanda = demandas[pos]
+    demanda['status'] = 'Fechada'
+
+    usuarios = [busca_usuario_id(id_usuario) for id_usuario in demanda['associados']]
+    usuarios_envio = set([usuario['email'] for usuario in usuarios])
+
+    assunto_email = f"A demanda {demanda['titulo']} foi fechada!"
+    corpo_email = f"A demanda {demanda['titulo']}, que você participou, foi fechada!"
+                    + " Fique a vontade para avaliar quem se propôs a ajudar."
+                    + '<br><a href="#">Avaliar</a>'
+
+    notifica.enviar_emails(assunto_email, usuarios_envio, corpo_email)
+
+
+def apaga_demanda(id):
+    global demandas
+    pos = busca_demanda_id(id)[0]
+    demandas = demandas[:pos] + demandas[pos+1:]
 
 
 
-
-#def fecha_demanda()
 
 # def editar_demanda(codDemanda, titulo, tipo, descricao, tags):
 #     global demandas

@@ -28,9 +28,9 @@ demandas = [
         'tipo': 'Aberto a membros',
         'descricao': 'Sou estudante de bioinformática e preciso aprender scripts em python, mas possuo dificuldade em lógica de programação.',
         'status': 'Fechada',
-        'codUsuario': 7,
-        'associados': [],
-        'ajudante': 1
+        'codUsuario': 1,
+        'associados': [1],
+        'ajudante': 7
     },
     {
         'codDemanda': 4,
@@ -39,8 +39,8 @@ demandas = [
         'tipo': 'Individual',
         'descricao': 'Gostaria de alguém para me auxiliar na parte derivadas e integrais. Estou com muita dificuldade.',
         'status': 'Fechada',
-        'codUsuario': 5,
-        'associados': [],
+        'codUsuario': 1,
+        'associados': [1],
         'ajudante': 7
     },
 ]
