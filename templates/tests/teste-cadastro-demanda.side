@@ -1,0 +1,199 @@
+{
+  "id": "548c7d1d-49ba-45f5-8af9-f705fdf2b834",
+  "version": "2.0",
+  "name": "teste-cadastro-demanda",
+  "url": "http://127.0.0.1:5501/FrontEnd/cadastrar-demanda/index.html",
+  "tests": [{
+    "id": "b8b6ec35-8c82-4ecf-9ca6-656523105a94",
+    "name": "cad-demanda",
+    "commands": [{
+      "id": "c8dde436-1893-4f3f-84ba-2aebf22bcfab",
+      "comment": "",
+      "command": "open",
+      "target": "http://127.0.0.1:5501/FrontEnd/cadastrar-demanda/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7ef12e59-1c07-4811-844c-4b6ed1dbaeec",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1550x830",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2979bbaf-2e3e-464c-b099-eccbba15f51c",
+      "comment": "",
+      "command": "click",
+      "target": "id=titulo",
+      "targets": [
+        ["id=titulo", "id"],
+        ["name=titulo", "name"],
+        ["css=#titulo", "css:finder"],
+        ["xpath=//input[@id='titulo']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8ffd53f9-1b4d-4dbd-b8fd-1bceeb8020dc",
+      "comment": "",
+      "command": "type",
+      "target": "id=titulo",
+      "targets": [
+        ["id=titulo", "id"],
+        ["name=titulo", "name"],
+        ["css=#titulo", "css:finder"],
+        ["xpath=//input[@id='titulo']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Prova de PE"
+    }, {
+      "id": "982871eb-8a7d-4972-9001-7b4489e9e02d",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "name=classificacao",
+      "targets": [
+        ["name=classificacao", "name"],
+        ["css=.tag:nth-child(13)", "css:finder"],
+        ["xpath=//select[@name='classificacao']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "-604.7999877929688,-424.5"
+    }, {
+      "id": "eb619b78-4be2-4b7c-82e0-fc6e8927176d",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "name=classificacao",
+      "targets": [
+        ["name=classificacao", "name"],
+        ["css=.tag:nth-child(13)", "css:finder"],
+        ["xpath=//select[@name='classificacao']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "-604.7999877929688,-424.5"
+    }, {
+      "id": "076f0bf6-a229-400a-af77-f1d84517da73",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "name=classificacao",
+      "targets": [
+        ["name=classificacao", "name"],
+        ["css=.tag:nth-child(13)", "css:finder"],
+        ["xpath=//select[@name='classificacao']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "-604.7999877929688,-424.5"
+    }, {
+      "id": "920a8631-339a-4fc7-952d-638031aec536",
+      "comment": "",
+      "command": "click",
+      "target": "name=classificacao",
+      "targets": [
+        ["name=classificacao", "name"],
+        ["css=.tag:nth-child(13)", "css:finder"],
+        ["xpath=//select[@name='classificacao']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "65f3f504-bcb6-4ebf-a4ba-7baf43df1f5c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.tag:nth-child(13) > option:nth-child(1)",
+      "targets": [
+        ["css=.tag:nth-child(13) > option:nth-child(1)", "css:finder"],
+        ["xpath=//option[@value='001']", "xpath:attributes"],
+        ["xpath=//option", "xpath:position"],
+        ["xpath=//option[contains(.,'COMPUTAÇÃO - Programação Estruturada')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6608c9a6-8fa9-4b43-8503-704f43fceb44",
+      "comment": "",
+      "command": "click",
+      "target": "css=.demanda-grupo > label",
+      "targets": [
+        ["css=.demanda-grupo > label", "css:finder"],
+        ["xpath=//div[2]/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Aberto a membros')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "16c1deeb-78a8-4e85-a9d6-f9e6d8c78c84",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "1535,510"
+    }, {
+      "id": "d9838b52-2916-4a97-84e0-71aca3f2a237",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "1535,510"
+    }, {
+      "id": "b32395de-f7f2-426f-979d-7183c9d050eb",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": "1535,510"
+    }, {
+      "id": "c4c6b88d-e302-4b40-9432-4beae0102bcd",
+      "comment": "",
+      "command": "click",
+      "target": "id=descricao-demanda",
+      "targets": [
+        ["id=descricao-demanda", "id"],
+        ["name=descricao-demanda", "name"],
+        ["css=#descricao-demanda", "css:finder"],
+        ["xpath=//textarea[@id='descricao-demanda']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0f2113cb-962b-445c-a836-2bcf16714349",
+      "comment": "",
+      "command": "type",
+      "target": "id=descricao-demanda",
+      "targets": [
+        ["id=descricao-demanda", "id"],
+        ["name=descricao-demanda", "name"],
+        ["css=#descricao-demanda", "css:finder"],
+        ["xpath=//textarea[@id='descricao-demanda']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "A primeira prova de programação estruturada acontecerá nesta sexta e preciso de ajuda. Os assuntos são declaração de variáveis, arrays e métodos."
+    }, {
+      "id": "6e53395f-ca3d-41ca-8b91-148d2da06d25",
+      "comment": "",
+      "command": "click",
+      "target": "css=.botao-cadastro",
+      "targets": [
+        ["css=.botao-cadastro", "css:finder"],
+        ["xpath=//input[@value='Cadastrar Demanda']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "5011647c-49e2-4beb-84a9-23f0f7336a8d",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["b8b6ec35-8c82-4ecf-9ca6-656523105a94"]
+  }],
+  "urls": ["http://127.0.0.1:5501/FrontEnd/cadastrar-demanda/index.html"],
+  "plugins": []
+}
