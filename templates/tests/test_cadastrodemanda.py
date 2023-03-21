@@ -11,7 +11,10 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> bd6f21f6d65254e4efbe5b8dbeab1dc9d8540f68
 =======
 >>>>>>> bd6f21f6d65254e4efbe5b8dbeab1dc9d8540f68
 class TestCadastrodemanda():
