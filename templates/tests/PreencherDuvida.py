@@ -18,8 +18,8 @@ class TestPreencherinformaes():
     #self.driver = webdriver.Chrome()
     self.vars = {}
   
-  def teardown_method(self, method):
-    self.driver.quit()
+  #def teardown_method(self, method):
+    #self.driver.quit()
   
   def test_preencherinformaes(self):
     self.driver.get("https://ajudaai.pythonanywhere.com/")
