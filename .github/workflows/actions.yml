@@ -46,7 +46,8 @@ jobs:
         sudo apt-get install xvfb
         
     - name: Test with pytest
-      run: |    
+      run: |
+        python
         from selenium import webdriver
         from selenium.webdriver.chrome.options import Options
         options = Options()
