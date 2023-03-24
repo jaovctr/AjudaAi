@@ -15,7 +15,7 @@ options.add_argument("--disable-extensions")
 driver = webdriver.Chrome(chrome_options=options, executable_path='/usr/bin/chromedriver')
 class TestPreencherinformaes():
   def setup_method(self, method):
-    self.driver = webdriver.Chrome()
+    #self.driver = webdriver.Chrome()
     self.vars = {}
   
   def teardown_method(self, method):
