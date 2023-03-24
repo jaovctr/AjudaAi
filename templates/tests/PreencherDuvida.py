@@ -15,11 +15,11 @@ options.add_argument("--disable-extensions")
 driver = webdriver.Chrome(chrome_options=options, executable_path='/usr/bin/chromedriver')
 class TestPreencherinformaes():
   def setup_method(self, method):
-    #self.driver = webdriver.Chrome()
+    self.driver = webdriver.Chrome(chrome_options=options, executable_path='/usr/bin/chromedriver')
     self.vars = {}
   
-  #def teardown_method(self, method):
-    #self.driver.quit()
+  def teardown_method(self, method):
+    self.driver.quit()
   
   def test_preencherinformaes(self):
     self.driver.get("https://ajudaai.pythonanywhere.com/")
